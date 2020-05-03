@@ -1,0 +1,10 @@
+a{
+    color: #868e96;
+    padding-right: 3%;
+}
+
+a:hover{
+    color: darkorange;
+    text-decoration: none;
+
+}

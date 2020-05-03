@@ -1,0 +1,27 @@
+.btn-light{
+    border: none;
+    border-radius: 40px;
+    color: dimgray;
+}
+
+.btn-light:hover{
+    background-color: darkorange;
+}
+
+.btn-outline-dark{
+    border-radius: 40px;
+}
+
+.btn-outline-dark:hover{
+    background-color: darkorange;
+    border: none;
+}
+
+.btn-dark{
+    border: none;
+    border-radius: 40px;
+    color: white;
+}
+.btn-dark:hover{
+    background-color: darkorange;
+}

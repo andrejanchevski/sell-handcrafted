@@ -1,0 +1,24 @@
+.booking-card{
+    width: 18rem;
+    font-family: Montserrat;
+}
+
+.size1{
+    font-size: 13px;
+}
+
+a{
+    color:#383635;
+}
+a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
+.btn-dark{
+    border-radius: 50%;
+    border: none;
+}
+.btn-dark:hover{
+    background-color: darkorange;
+}

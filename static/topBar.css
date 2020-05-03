@@ -1,0 +1,243 @@
+.topBar{
+    background-color: beige;
+}
+
+.topBar-social
+{
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding-left: 40px;
+}
+
+.topBar-social-item
+{
+    color: darkgray;
+}
+
+.topBarText
+{
+    font-family: Montserrat;
+    color: dimgray;
+    line-height: normal;
+    font-size: 14px;
+}
+.topBarTail
+{
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    padding-right: 35px;
+}
+.box select
+{
+    border: none;
+    color: darkgray;
+    font-size: 14px;
+    outline: none;
+    font-family: Montserrat;
+}
+
+a:hover{
+    color: darkorange;
+    text-decoration: none;
+}
+.select-items
+{
+    background-color: darkorange;
+}
+
+.navMenu{
+    font-family: Montserrat;
+    font-size: 17px;
+}
+.fontType
+{
+    font-family: Montserrat;
+}
+.navItemsColor{
+    color: #333333;
+}
+.cartTextStyle{
+    font-family: Montserrat;
+    color:dimgray;
+    font-size: 15px;
+}
+
+.cartSubTextStyle{
+    font-family: Montserrat;
+    color:dimgray;
+    font-size: 11px;
+}
+
+.btn-dark
+{
+    font-family: Montserrat;
+    border-radius: 40px;
+    border: none;
+
+}
+
+.btn-light
+{
+    font-family: Montserrat;
+    border-radius: 40px;
+    border: none;
+}
+.btn-dark:hover{
+    background: darkorange;
+}
+
+.btn-light:hover{
+    background: darkorange;
+}
+.carouselMiddleText
+{
+    font-family: Montserrat;
+}
+.carouselLargeText
+{
+    font-family: Montserrat;
+    font-size: 60px;
+}
+.carousel-caption{
+    top:50%;
+    transform: translateY(-50%);
+    bottom:initial;
+}
+
+.carousel-indicators>li{
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+}
+.block {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.block img {
+    width: 100%;
+    height: auto;
+    transition: transform .5s ease;
+}
+
+.thisButton {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+
+}
+.block:hover img
+{
+    transform: scale(1.5);
+}
+
+.block .thisButton:hover {
+    background-color: darkorange;
+}
+
+.blockProd {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.blockProd img {
+    width: 100%;
+    height: auto;
+}
+
+.thisButtonProd {
+    position: absolute;
+    top: 75%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display:none;
+
+}
+.blockProd:hover .thisButtonProd
+{
+   display:block;
+}
+
+.blockProd .thisButtonProd:hover {
+    background-color: darkorange;
+}
+.footerTextBig
+{
+    font-family: Montserrat;
+    font-size: 18px;
+    color: black;
+}
+.footerTextSmall
+{
+    font-family: Montserrat;
+    font-size: 15px;
+    color: dimgray;
+}
+.zaFooter{
+    background-color:lightgray;
+}
+.listata
+{
+    list-style: none;
+    font-family: Montserrat;
+}
+
+.listItems{
+    font-size: 15px;
+    color: dimgray;
+}
+
+.zaInput{
+    border: 0;
+    border-bottom: darkgray solid 1px;
+}
+.zaBigCard{
+    font-family: Montserrat;
+    color: dimgray;
+}
+.img-hover-zoom{
+    overflow: hidden;
+}
+.img-hover-zoom img{
+    transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img{
+    transform: scale(1.2);
+}
+.zaPortokalovoNaslov{
+    font-family: Montserrat;
+    color:#595857   ;
+}
+.pozadina{
+    background:#ffdea6;
+}
+
+.zaContact{
+    color: #333333;
+    font-family: Montserrat;
+}

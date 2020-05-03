@@ -1,0 +1,11 @@
+.Container{
+    font-family: Montserrat;
+}
+
+.Container p{
+    color: dimgray;
+}
+
+.Container img{
+    max-height: 250px;
+}

@@ -1,0 +1,40 @@
+.Background{
+    font-family: Montserrat,sans-serif;
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+.Block1{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #ffdea6;
+}
+
+.Error{
+    color: red;
+    font-size: 13px;
+}
+
+
+.Content{
+
+}
+
+.Content input[type="file"]{
+    display: none;
+}
+
+
+.Content label{
+    
+    color: #ffdea6;
+    height: 100px;
+    width: 25%;
+    margin: auto;
+    border: #ffdea6 solid 3px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat,sans-serif;
+}

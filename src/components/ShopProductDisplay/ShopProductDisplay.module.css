@@ -1,0 +1,29 @@
+.Content{
+    font-family: Montserrat;
+    width: 12rem;
+    border: none;
+}
+
+.Content .subShopSmall{
+    margin: 0;
+    font-size: 20px;
+    color: #323332;
+}
+
+.Content .subShopLarge{
+    font-size: 13px;
+    color: #323332;
+}
+
+
+.AddCardBody{
+    background-color: #ffdea6;
+    border: none;
+    padding: 0;
+}
+
+.AddCardBody1{
+    border: none;
+    padding: 0;
+}
+

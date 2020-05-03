@@ -1,0 +1,22 @@
+.Background{
+    background-color: #ffdea6;
+    font-family: Montserrat;
+    margin-top: 2%;
+}
+
+.Background h2{
+    color: #595857;
+}
+
+.Background h3{
+    color: #595857;
+}
+
+.Background p{
+    color: dimgray;
+    font-size: 15px;
+}
+
+.Background h5{
+    color:#333333;
+}

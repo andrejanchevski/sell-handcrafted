@@ -1,0 +1,9 @@
+.Lista{
+    list-style: none;
+    font-family: Montserrat;
+}
+
+.Lista li{
+    font-size: 15px;
+    color: dimgray;
+}

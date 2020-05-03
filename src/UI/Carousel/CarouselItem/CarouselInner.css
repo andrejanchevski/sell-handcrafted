@@ -1,0 +1,22 @@
+.btn-light{
+    border-radius: 40px;
+    border: none;
+}
+
+.btn-light:hover{
+    background-color: darkorange;
+}
+
+.smallText{
+    font-size: 23px;
+}
+
+.bigText{
+    font-size: 60px;
+}
+
+.CarouselCaptions{
+    top:50%;
+    transform: translateY(-50%);
+    bottom:initial;
+}

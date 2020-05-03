@@ -1,0 +1,97 @@
+.breadcrumb{
+    background-color: white;
+    font-family: Montserrat;
+    font-size: 13px;
+}
+
+.breadcrumb-item > a{
+    color: gray;
+    text-decoration: none;
+}
+
+.productFont{
+    font-family: Montserrat;
+}
+.dropdown-item{color: gray}
+
+.dropdown-item:hover{
+    background: #ffd270;
+}
+
+a:hover{
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+}
+
+.linkShop{
+    font-size: 20px;
+    color: dimgray;
+}
+.smallText{
+    font-size: 14px;
+    color: gray;
+}
+.bojaStars{
+    color: yellow;
+}
+.littleBigger{
+    font-size: 15px;
+    color: #454544;
+}
+.ramkaHelp{
+    border: dimgray solid 1px;
+    color: dimgrey;
+}
+
+.btn-dark{
+    border-radius: 40px;
+    border: none;
+}
+
+.btn-dark:hover{
+    background-color: darkorange;
+}
+.btn-outline-dark{
+    border-radius: 40px;
+}
+.btn-outline-dark:hover{
+    background-color: darkorange;
+    border: none;
+}
+
+.shipSmallT{
+    font-size: 15px;
+    color: dimgray;
+}
+.shipLargeT{
+    font-size: 20px;
+    color: #525252;
+}
+.shipSmallT > a{
+    color: dimgray;
+}
+
+.shipSmallT > a:hover{
+    color: orange;
+}
+h3 > a{
+    color: gray;
+}
+.downCard{
+    background-color: #ffdea6;
+    border: none;
+}
+
+.subShopSmall{
+    font-size: 13px;
+    color: #323332;
+}
+.subShopLarge{
+    font-size: 20px;
+    color: #323332;
+}
+.menuvamPadding{
+    padding: 0;
+}

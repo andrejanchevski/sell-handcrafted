@@ -1,0 +1,22 @@
+.footerTextSmall{
+    font-family: Montserrat;
+    font-size: 15px;
+    color: dimgray;
+}
+
+.zaInput{
+    border: 0;
+    border-bottom: darkgray solid 1px;
+}
+
+.footerTextBig{
+    font-family: Montserrat;
+    font-size: 18px;
+    color: black;
+}
+
+.cartTextStyle{
+    font-family: Montserrat;
+    color:dimgray;
+    font-size: 15px;
+}

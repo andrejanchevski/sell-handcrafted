@@ -1,0 +1,37 @@
+.block {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.block img {
+    width: 100%;
+    height: auto;
+    transition: transform .5s ease;
+}
+
+.block:hover img
+{
+    transform: scale(1.5);
+}
+
+.block .thisButton:hover {
+    background-color: darkorange;
+}
+
+.thisButton {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+
+}

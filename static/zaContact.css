@@ -1,0 +1,35 @@
+.slikaPozadina{
+    background-image: url(https://via.placeholder.com/700);
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.slikaProba
+{
+    background-image: url(shoppmy.png);
+
+}
+.textFamily{
+    font-family: Montserrat;
+}
+.textZaSlikiGore
+{
+    color: white;
+    font-size: 40px;
+}
+
+.btn-dark
+{
+    font-family: Montserrat;
+    border-radius: 40px;
+    border: none;
+}
+.btn-dark:hover{
+    background: darkorange;
+}
+.textNaslov1
+{
+    color: black;
+}

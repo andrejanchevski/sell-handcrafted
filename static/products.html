@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css”>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef30ce0dc5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="forProducts.css">
+
+    <script>
+        $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 75, 300 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+        } );
+    </script>
+</head>
+<body>
+<div style="padding-left: 15%;padding-right: 15%">
+
+    <div class="row">
+        <div class="col-3 textFamily">
+            <h5 class="mb-3"><strong>Categories</strong></h5>
+            <ul class="textFamily zaLista pl-0">
+                <li class="mb-2"><a href="#" class="active">All</a></li>
+                <li class="mb-2"><a href="#"> Men</a></li>
+                <li class="mb-2"><a href="#">Woman</a></li>
+                <li class="mb-4"><a href="#">Accessories</a></li>
+            </ul>
+            <h5 class="mb-2"><strong>Filters</strong></h5>
+            <hr style="color: darkgray">
+            <h5 class="mt-4" style="color: dimgray">Price</h5>
+            <div id="slider-range"></div>
+            <div class="row mt-4">
+                <div class="col-auto">
+                    <button class="btn-dark transform1">Filter</button>
+                </div>
+                <div class="col">
+                    <label for="amount" style="font-size: 13px">Range:</label>
+                    <input type="text" id="amount" class="w-75" readonly style="border:0; font-size: 15px;color: dimgray">
+                </div>
+            </div>
+            <hr  class="mt-4" style="color: darkgray">
+            <h5 class="mt-4 mb-3" style="color: dimgray">Color</h5>
+            <a href=""><span class="dot bg-warning mr-2" ></span></a>
+            <span class="dot bg-danger mr-2" ></span>
+            <span class="dot bg-primary mr-2" ></span>
+            <span class="dot bg-success mr-2" ></span>
+            <span class="dot bg-dark mr-2" ></span>
+            <span class="dot mr-2"  style="background: cadetblue"></span>
+            <form class="form-inline md-form form-sm mt-3">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                       aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        </div>
+        <div class="col-9">
+            <div class="row textFamily">
+                <div class="col-auto">
+                        <div class="dropdown">
+                            <button class="btn ramkaHelp dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Default Sorting
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Default Sorting</a>
+                                <a class="dropdown-item" href="#">Price:Low to High</a>
+                                <a class="dropdown-item" href="#">Price:High to Low</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col">
+                    <div  class="float-right pt-2" style="font-size: 13px; padding-right: 9%">
+                        Showing 1-22 of 55 results
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-auto">
+                    <div class="card booking-card mt-3" style="width: 18rem">
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="https://via.placeholder.com/900x800" alt="Card image cap">
+                        </div>
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title textFamily"><a>La Sirena restaurant</a></h4>
+                            <!-- Data -->
+                            <ul class="list-unstyled list-inline mb-0">
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"> </i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item bojaStars"><i class="fas fa-star-half-alt "></i></li>
+                                <li class="list-inline-item"><p class="text-muted textFamily">4.5 (413)</p></li>
+                            </ul>
+                            <p class="mb-2 textFamily">$ • 129.00</p>
+                            <!-- Text -->
+                            <p class="card-text textFamily goleminaText">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <hr class="my-4">
+                            <div class="row ">
+                                <button class="btn btn-dark ml-2 mr-2" title="View More"><i class="fas fa-arrows-alt"></i></button>
+                                <button class="btn btn-dark  ml-2 mr-2" title="Favorites"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-auto">
+                    <div class="card booking-card mt-3 " style="width: 18rem">
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="https://via.placeholder.com/900x800" alt="Card image cap">
+                        </div>
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title textFamily"><a>La Sirena restaurant</a></h4>
+                            <!-- Data -->
+                            <ul class="list-unstyled list-inline mb-0">
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"> </i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item bojaStars"><i class="fas fa-star-half-alt "></i></li>
+                                <li class="list-inline-item"><p class="text-muted textFamily">4.5 (413)</p></li>
+                            </ul>
+                            <p class="mb-2 textFamily">$ • 129.00</p>
+                            <!-- Text -->
+                            <p class="card-text textFamily goleminaText">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <hr class="my-4">
+                            <div class="row ">
+                                <button class="btn btn-dark ml-2 mr-2" title="View More"><i class="fas fa-arrows-alt"></i></button>
+                                <button class="btn btn-dark  ml-2 mr-2" title="Favorites"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="card booking-card mt-3 " style="width: 18rem">
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="https://via.placeholder.com/900x800" alt="Card image cap">
+                        </div>
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title textFamily"><a>La Sirena restaurant</a></h4>
+                            <!-- Data -->
+                            <ul class="list-unstyled list-inline mb-0">
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"> </i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item bojaStars"><i class="fas fa-star-half-alt "></i></li>
+                                <li class="list-inline-item"><p class="text-muted textFamily">4.5 (413)</p></li>
+                            </ul>
+                            <p class="mb-2 textFamily">$ • 129.00</p>
+                            <!-- Text -->
+                            <p class="card-text textFamily goleminaText">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <hr class="my-4">
+                            <div class="row ">
+                                <button class="btn btn-dark ml-2 mr-2" title="View More"><i class="fas fa-arrows-alt"></i></button>
+                                <button class="btn btn-dark  ml-2 mr-2" title="Favorites"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="card booking-card mt-3 " style="width: 18rem">
+                        <!-- Card image -->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="https://via.placeholder.com/900x800" alt="Card image cap">
+                        </div>
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title textFamily"><a>La Sirena restaurant</a></h4>
+                            <!-- Data -->
+                            <ul class="list-unstyled list-inline mb-0">
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"> </i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item mr-0 bojaStars"><i class="fas fa-star"></i></li>
+                                <li class="list-inline-item bojaStars"><i class="fas fa-star-half-alt "></i></li>
+                                <li class="list-inline-item"><p class="text-muted textFamily">4.5 (413)</p></li>
+                            </ul>
+                            <p class="mb-2 textFamily">$ • 129.00</p>
+                            <!-- Text -->
+                            <p class="card-text textFamily goleminaText">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <hr class="my-4">
+                            <div class="row ">
+                                <button class="btn btn-dark ml-2 mr-2" title="View More"><i class="fas fa-arrows-alt"></i></button>
+                                <button class="btn btn-dark  ml-2 mr-2" title="Favorites"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 ml-1">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

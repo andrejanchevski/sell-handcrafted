@@ -1,0 +1,65 @@
+.textFamily{
+    font-family: Montserrat;
+}
+
+.smallNaslovInfo{
+    font-size: 15px;
+    color: gray;
+}
+.smallShopOwnerAboveText{
+    font-size: 14px;
+    color: gray;
+}
+.smallShopOwnerUnderText{
+    font-size: 15px;
+}
+
+.list-group-item.active {
+    background-color: orange;
+    border-color: orange;
+}
+
+.list-group-item{
+    font-size: 13px;
+}
+
+a{
+    color: dimgray;
+}
+a:hover{
+    color: darkorange;
+}
+.card-body{
+    padding: 0;
+}
+
+.page-item{
+    margin-right: 20px;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: white;
+    background-color: gray;
+}
+.page-item.disabled .page-link {
+    color: #868e96;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #CEFFCE;
+    border-color: #718393;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: darkorange;
+}
+.page-link:focus, .page-link:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: darkorange;
+}
