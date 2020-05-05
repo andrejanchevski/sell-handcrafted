@@ -1,0 +1,49 @@
+.Background{
+    padding-left: 15%;
+    padding-right: 15%;
+    font-family: Montserrat,sans-serif;
+}
+
+.Block{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #ffdea6;
+}
+
+.SmallText{
+    font-size: 13px;
+    color: dimgray;
+}
+.MiddleText{
+    font-size: 15px;
+    color: dimgray;
+}
+
+.Content{
+
+}
+
+.Field{
+    box-sizing: border-box;
+    color: #595857;
+    background-color: #ffd270;
+    width: 10%;
+    text-align: center;
+}
+
+.Content input[type="file"]{
+    display: none;
+}
+
+
+.Content label{
+    color: #ffdea6;
+    height: 100px;
+    width: auto;
+    border: #ffdea6 solid 3px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat,sans-serif;
+}

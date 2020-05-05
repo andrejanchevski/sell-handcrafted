@@ -6,7 +6,7 @@ import ModalBody from "./ModalBody/ModalBody";
 
 
 
-class RegiesterModal extends Component{
+class RegisterModal extends Component{
 
     handleClose=()=>{
         this.props.closeRegisterModal();
@@ -38,4 +38,4 @@ const mapDispatchToProps=(dispatch)=>{
 
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(RegiesterModal);
+export default connect(mapStateToProps,mapDispatchToProps)(RegisterModal);

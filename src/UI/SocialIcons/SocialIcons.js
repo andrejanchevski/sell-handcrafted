@@ -10,11 +10,11 @@ import './SocialIcons.css'
 const SocialIcons=(props)=>{
     return (
         <div className="col-md-auto">
-            <a href="#"> <FontAwesomeIcon icon={faFacebook} size="lg"/></a>
-            <a href="#"> <FontAwesomeIcon icon={faInstagram} size="lg"/></a>
-            <a href="#"> <FontAwesomeIcon icon={faPinterest} size="lg"/></a>
-            <a href="#"> <FontAwesomeIcon icon={faYoutube} size="lg"/></a>
-            <a href="#"> <FontAwesomeIcon icon={faTwitter} size="lg"/></a>
+            <a href="/"> <FontAwesomeIcon icon={faFacebook} size="lg"/></a>
+            <a href="/"> <FontAwesomeIcon icon={faInstagram} size="lg"/></a>
+            <a href="/"> <FontAwesomeIcon icon={faPinterest} size="lg"/></a>
+            <a href="/"> <FontAwesomeIcon icon={faYoutube} size="lg"/></a>
+            <a href="/"> <FontAwesomeIcon icon={faTwitter} size="lg"/></a>
         </div>
     )
 };

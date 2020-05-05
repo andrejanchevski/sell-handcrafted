@@ -19,6 +19,7 @@ const reducer = (state=initalState,action)=>{
             };
         case actionTypes.CLOSE_REGISTER_MODAL:
             return{
+                ...state,
                 modalOpen:false
             };
         case actionTypes.ADD_USER_FIRST_NAME:

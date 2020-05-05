@@ -23,3 +23,29 @@ export {
     confrimPassword
 
 } from './registerModalActions'
+
+export {
+    addProductName,
+    addPrimaryPhoto,
+    addLeftAngle,
+    addRightAngle,
+    addDetailsPhoto,
+    addInUsePhoto,
+    addScenePhoto,
+    addProductDescription,
+    addProductCategory,
+    addProductMaterial,
+    addProductSKU,
+    selectFirstAttribute,
+    selectSecondAttribute,
+    selectThirdAttribute
+} from './createProductActions'
+
+export {
+    selectItem,
+    typeItem,
+    addPrice,
+    addQuantity
+
+} from "./tableAttributeActions"
+

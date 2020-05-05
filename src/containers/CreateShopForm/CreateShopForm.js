@@ -147,8 +147,8 @@ class CreateShopForm extends Component{
                                     <input
                                         type="file"
                                         onChange={this.coverPhotoChosen}
-                                        id="file" accept="image/*"/>
-                                    <label htmlFor="file">
+                                        id="file1" accept="image/*"/>
+                                    <label htmlFor="file1">
                                         <FontAwesomeIcon icon={faCloudUploadAlt} size="lg"/>
                                     </label>
                                     {text2}

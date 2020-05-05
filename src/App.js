@@ -6,6 +6,8 @@ import HomeBuilder from "./containers/HomeBuilder/HomeBuilder";
 import ProductBuilder from "./containers/ProductBuilder/ProductBuilder";
 import ShopBuilder from "./containers/ShopBuilder/ShopBuilder";
 import CreateShopForm from "./containers/CreateShopForm/CreateShopForm";
+import CreateProductForm from "./containers/CreateProductForm/CreateProductForm";
+
 
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
     <div>
       <Layout>
           <Switch>
-              <Route path="/" exact component={CreateShopForm}/>
+              <Route path="/" exact component={CreateProductForm}/>
           </Switch>
       </Layout>
     </div>

@@ -15,16 +15,20 @@ import {createStore,combineReducers} from "redux";
 import selectReducer from "./store/reducers/selectReducer";
 import createShopReducer from "./store/reducers/createShopReducer";
 import registerModalReducer from "./store/reducers/registerModalReducer"
+import createProductReducer from "./store/reducers/createProductReducer"
+import tableAttributeReducer from './store/reducers/tableAttributeReducer'
 
 
 const rootReducer=combineReducers({
     selectReducer:selectReducer,
     createShopReducer:createShopReducer,
-    registerModalReducer:registerModalReducer
+    registerModalReducer:registerModalReducer,
+    createProductReducer:createProductReducer,
+    tableAttributeReducer:tableAttributeReducer
 });
 
-const store=createStore(rootReducer);
 
+const store=createStore(rootReducer);
 const app=(
     <Provider store={store}>
         <BrowserRouter>
