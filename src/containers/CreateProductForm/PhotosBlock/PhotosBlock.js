@@ -57,6 +57,10 @@ const PhotosBlock=(props)=>{
     }
 
     const primaryPhotoAdded=(event)=>{
+        // debugger;
+        // let fd=new FormData();
+        // fd.append('formData',event.target.files[0]);
+
         props.onPrimaryPhotoAdded(event.target.files[0]);
         setPrimaryPhotoAdded(true);
     };
@@ -80,8 +84,6 @@ const PhotosBlock=(props)=>{
     const scenePhotoAdded=(event)=>{
         setScenePhoto(true)
     };
-
-
 
 
 

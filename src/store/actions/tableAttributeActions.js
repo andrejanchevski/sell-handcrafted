@@ -1,19 +1,6 @@
 import * as actionTypes from './actionTypes'
 
 
-export const selectItem=(selectedItem)=>{
-    return{
-        type:actionTypes.SELECTED_ITEM,
-        selectedItem:selectedItem
-    }
-};
-
-export const typeItem=(typedItem)=>{
-    return{
-        type:actionTypes.TYPED_ITEM,
-        typedItem:actionTypes.TYPED_ITEM
-    }
-};
 
 export const addPrice=(price)=>{
     return{
@@ -24,7 +11,55 @@ export const addPrice=(price)=>{
 
 export const addQuantity=(quantity)=>{
     return{
-        type:actionTypes.PRICE_ADDED,
+        type:actionTypes.QUANTITY_ADDED,
         quantity:quantity
+    }
+};
+
+export const addOnInputOne=(inputAttributeOne)=>{
+    return {
+        type:actionTypes.ON_INPUT_ONE,
+        inputAttributeOne:inputAttributeOne
+    }
+};
+
+export const addOnInputTwo=(inputAttributeTwo)=>{
+    return {
+        type:actionTypes.ON_INPUT_TWO,
+        inputAttributeTwo:inputAttributeTwo
+    }
+};
+
+export const addOnInputThree=(inputAttributeThree)=>{
+    return {
+        type:actionTypes.ON_INPUT_THREE,
+        inputAttributeThree:inputAttributeThree
+    }
+};
+
+export const addOnSelectOne=(selectAttributeOne)=>{
+    return{
+        type:actionTypes.ON_SELECT_ONE,
+        selectAttributeOne:selectAttributeOne
+    }
+};
+
+export const addOnSelectTwo=(selectAttributeTwo)=>{
+    return{
+        type:actionTypes.ON_SELECT_TW0,
+        selectAttributeTwo:selectAttributeTwo
+    }
+};
+
+export const addOnSelectThree=(selectAttributeThree)=>{
+    return{
+        type:actionTypes.ON_SELECT_THREE,
+        selectAttributeThree:selectAttributeThree
+    }
+};
+
+export const clear=()=>{
+    return{
+        type:actionTypes.CLEAR_ADD
     }
 };

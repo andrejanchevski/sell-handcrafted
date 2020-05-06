@@ -5,6 +5,7 @@ import * as actions from '../../../store/actions/generalActions'
 import Button from "../../../UI/Button/Button";
 import Select from "react-select";
 import TableAttribute from "../../TableAttribute/TableAttribute";
+import tableAttributeReducer from "../../../store/reducers/tableAttributeReducer";
 
 const attributes=[
     {name:"size_EU",value:"M"},
@@ -21,8 +22,8 @@ const attributes=[
 ];
 const PricingAndInventory=(props)=>{
 
-    const [tableOpen,setTableOpen]=useState(false)
-    let nizaKlasi=[styles.Block,"mt-5"];
+    const [tableOpen,setTableOpen]=useState(false);
+    let nizaKlasi=[styles.Block,"mt-5","mb-5"];
     let disabled;
     let tabela=null;
     const distinctAttributes=[...new Set(attributes.map(x=>x.name))];
@@ -101,9 +102,7 @@ const PricingAndInventory=(props)=>{
 
 const mapStateToProps=(state)=>{
     return{
-        attributes:state.createProductReducer.chosenAttributes
-
-
+        attributes:state.createProductReducer.chosenAttributes,
     }
 };
 

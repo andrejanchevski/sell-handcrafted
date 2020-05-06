@@ -7,6 +7,7 @@ const initalState={
     productCategoryID:"",
     materials:[],
     productSKU:"",
+    productItems:[],
     chosenAttributes:[]
 };
 
@@ -83,6 +84,17 @@ const reducer = (state=initalState,action)=>{
             return{
                 ...state,
                 chosenAttributes: state.chosenAttributes.concat(action.selectedItem)
+            };
+        case actionTypes.PRODUCT_ITEM_ADDED:
+            console.log("ADDING");
+            return{
+                ...state,
+                productItems: state.productItems.concat(action.productItem)
+            };
+        case actionTypes.DELETE_PRODUCT_ITEM:
+            return {
+                ...state,
+                productItems: state.productItems.filter((value,index)=>index!==action.productItemIndex)
             };
         default:
             return state;

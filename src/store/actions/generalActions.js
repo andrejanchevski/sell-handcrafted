@@ -38,14 +38,21 @@ export {
     addProductSKU,
     selectFirstAttribute,
     selectSecondAttribute,
-    selectThirdAttribute
+    selectThirdAttribute,
+    addProductVariaton,
+    deleteProductVariaton
 } from './createProductActions'
 
 export {
-    selectItem,
-    typeItem,
     addPrice,
-    addQuantity
+    addQuantity,
+    addOnInputOne,
+    addOnInputTwo,
+    addOnInputThree,
+    addOnSelectOne,
+    addOnSelectTwo,
+    addOnSelectThree,
+    clear
 
 } from "./tableAttributeActions"
 

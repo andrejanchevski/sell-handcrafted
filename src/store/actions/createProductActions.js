@@ -98,6 +98,21 @@ export const selectThirdAttribute=(selectedItem)=>{
     }
 };
 
+export const addProductVariaton=(productItem)=>{
+    return {
+        type:actionTypes.PRODUCT_ITEM_ADDED,
+        productItem:productItem
+    }
+};
+
+export const deleteProductVariaton=(productItemIndex)=>{
+    return {
+        type:actionTypes.DELETE_PRODUCT_ITEM,
+        productItemIndex:productItemIndex
+    }
+};
+
+
 
 
 
