@@ -15,7 +15,7 @@ function App() {
     <div>
       <Layout>
           <Switch>
-              <Route path="/" exact component={CreateProductForm}/>
+              <Route path="/" exact component={HomeBuilder}/>
           </Switch>
       </Layout>
     </div>

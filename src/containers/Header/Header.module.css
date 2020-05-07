@@ -1,0 +1,16 @@
+.Content{
+    font-family: Montserrat,sans-serif;
+}
+
+.smallHeaderText{
+    color: dimgray;
+    line-height: normal;
+    font-size: 16px;
+}
+
+.Content select{
+    border: none;
+    color: darkgray;
+    font-size: 16px;
+    outline: none;
+}

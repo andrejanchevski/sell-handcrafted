@@ -8,7 +8,7 @@ const breadcrumb = (props)=>{
     nizaKlasi.push(styles.Container);
     let nizaKategori=["Men","Home","T-shirt","Sale"];
     const kategorii=nizaKategori.map((el,index)=>{
-        return <li  key={index} className="breadcrumb-item"><a href="#">{el}</a></li>
+        return <li  key={index} className="breadcrumb-item"><a href="/">{el}</a></li>
     });
 
     return(

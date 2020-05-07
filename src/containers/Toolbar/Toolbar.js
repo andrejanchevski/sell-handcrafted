@@ -1,38 +1,25 @@
 import React,{Component} from "react";
-import {connect} from 'react-redux'
-import * as actions from "../../store/actions/generalActions";
+import {Navbar} from "react-bootstrap";
+import NavRight from "./NavRight/NavRight";
+import NavMiddle from "./NavMiddle/NavMiddle";
+import classes from './Toolbar.module.css'
 
 
 class Toolbar extends Component{
 
-    openRegisterModal=()=>{
-        this.props.openRegisterModal();
-    };
-
     render() {
         return(
-            <div>
-                <button
-                    className="btn btn-light"
-                    onClick={this.openRegisterModal}
-                >Register</button>
-            </div>
+            <Navbar  collapseOnSelect className={classes.Content} expand="lg" bg="white">
+                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <NavMiddle/>
+                    <NavRight user="Andrej"/>
+
+                </Navbar.Collapse>
+            </Navbar>
         )
     }
 }
 
-const mapStateToProps=(state)=>{
-    return{
-
-    }
-};
-
-const mapDispatchToProps=(dispatch)=>{
-    return{
-
-        openRegisterModal:()=>dispatch(actions.openRegisterModal())
-
-    }
-};
-
-export default connect(mapStateToProps,mapDispatchToProps)(Toolbar);
+export default Toolbar;

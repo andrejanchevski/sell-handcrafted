@@ -1,0 +1,18 @@
+.Content{
+    font-family: Montserrat,sans-serif;
+}
+
+
+.CartTitleItem{
+    color:dimgray;
+    font-size: 15px;
+}
+
+.Menu .dropdown-menu{
+    display: inline-block;
+}
+
+.CartPriceItem{
+    color:dimgray;
+    font-size: 11px;
+}

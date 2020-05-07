@@ -14,7 +14,7 @@ class Footer extends Component{
                         <p className="footerTextSmall pl-4">
                             Any questions?Let us know by writing us email or contact us on +389 75 223 468
                         </p>
-                        <SocialIcons/>
+                        <SocialIcons size="large"/>
                     </div>
                     <div className="col mr-0">
                         <div className="row">
