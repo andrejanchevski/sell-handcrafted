@@ -1,12 +1,12 @@
 import React from "react";
-import Aux from "../../../hoc/Aux/Aux";
+
 import Button from "../../../UI/Button/Button";
 
 
 const InsertReviewForm = (props)=>{
 
     return(
-        <Aux>
+        <div>
             <div className="card my-4">
                 <h5 className="card-header">Leave a Review:</h5>
                 <div className="card-body">
@@ -18,7 +18,7 @@ const InsertReviewForm = (props)=>{
                     </form>
                 </div>
             </div>
-        </Aux>
+        </div>
     )
 };
 
