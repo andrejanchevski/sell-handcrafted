@@ -1,6 +1,6 @@
 import React from "react";
 import ShopProductDisplay from "../ShopProductDisplay/ShopProducDisplay";
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "react-aux";
 import Select from "react-select";
 import styles from './ProductsofShop.module.css'
 

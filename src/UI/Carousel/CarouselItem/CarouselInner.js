@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import Carousel from "react-bootstrap/Carousel";
 import {Animated} from "react-animated-css";
-import Aux from "../../../hoc/Aux/Aux";
 import './CarouselInner.css'
 import Button from "../../Button/Button";
+import Aux from "react-aux"
 
 const carouselInner = (props)=>{
     return (

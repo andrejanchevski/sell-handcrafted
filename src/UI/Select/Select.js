@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "react-aux";
 const SelectCustomized=(props)=> {
 
     return (

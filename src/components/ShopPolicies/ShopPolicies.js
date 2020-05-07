@@ -1,5 +1,5 @@
 import React from "react";
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "react-aux";
 import styles from './ShopPolicies.module.css'
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "react-aux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import ListGroup from "../../UI/ListGroup/ListGroup";

@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import Aux from "../../hoc/Aux/Aux";
+import Aux from "react-aux";
 import Breadcrumb from "../../UI/BreadCrumbs/BreadCrumbs";
 import ShortShop from "../ShortShop/ShortShop";
 import classes from './ProductBuilder.module.css'
