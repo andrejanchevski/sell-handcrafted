@@ -56,3 +56,8 @@ export {
 
 } from "./tableAttributeActions"
 
+export {
+    setCategoriesAsTree
+
+} from "./categoryActions"
+

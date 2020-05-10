@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 class CreateProductForm extends Component{
     render() {
 
+        let niza=[styles.Background,"mt-4"];
         let disabled=true;
         if(this.props.productItems.length!==0){
             disabled=false
@@ -21,7 +22,7 @@ class CreateProductForm extends Component{
             console.log(this.props.productItems)
         };
         return (
-            <div className={styles.Background}>
+            <div className={niza.join(" ")}>
                 <form action="" onSubmit={onFormProductSubmit}>
                     <PhotosBlock/>
                     <ProdInfo/>

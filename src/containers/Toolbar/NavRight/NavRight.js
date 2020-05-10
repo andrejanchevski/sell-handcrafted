@@ -9,6 +9,7 @@ import * as actions from '../../../store/actions/generalActions'
 import NavBarDropDownCardItem from "../NavBarDropDownCardItem/NavBarDropDownCardItem";
 import './dropDownMenuSize.css'
 import Button from "../../../UI/Button/Button";
+import {withRouter} from "react-router-dom";
 
 
 let productsTemp=[
@@ -24,12 +25,15 @@ const NavRight=(props)=>{
 
     };
     let suma=0;
-
     let cartItems=productsTemp.map(el=>{
         suma=suma+el.price;
         return <NavBarDropDownCardItem key={el.id} name={el.productName} price={el.price}/>
     });
 
+    const openStoreForm=(event)=>{
+        event.preventDefault();
+        props.history.push("/create-shop");
+    }
 
     let title=<FontAwesomeIcon icon={faCartArrowDown} size="2x"/>;
     return (
@@ -50,7 +54,7 @@ const NavRight=(props)=>{
                 </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="" className="border-left border-right pl-3 pr-3" onClick={onRegisterModalOpen}><span>Hi,{props.user} <FontAwesomeIcon icon={faUser} size="2x"/></span></Nav.Link>
-            <Nav.Link href="" className="pl-3 pr-3" onClick={onRegisterModalOpen}><FontAwesomeIcon icon={faStore} size="2x"/></Nav.Link>
+            <Nav.Link href="" className="pl-3 pr-3" onClick={openStoreForm}><FontAwesomeIcon icon={faStore} size="2x"/></Nav.Link>
         </Nav>
     )
 
@@ -69,4 +73,4 @@ const mapDispatchToProps=(dispatch)=>{
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(NavRight);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(NavRight));

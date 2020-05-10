@@ -18,7 +18,6 @@ const ProdInfo=(props)=>{
 
     const [materialNow,setMaterialNow]=useState("");
     let nizaKlasi=[styles.Block,"mt-5"];
-    let nizaKlasi2=[styles.Field,"ml-3"];
 
     let nizaOptions=categories.map((el)=>{
         return{

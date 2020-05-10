@@ -8,7 +8,7 @@ const SmallList=(props)=>{
     });
 
     let kategorii=stateHere[0].categories.map((el,index)=>{
-        return <li className="pb-2" key={index}><a href="#">{el}</a></li>
+        return <li className="pb-2" key={index}><a href="/">{el}</a></li>
 
     });
     return (

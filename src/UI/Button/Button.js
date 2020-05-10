@@ -21,12 +21,6 @@ const Button = (props)=> {
         niza.push("mt-5")
     }
 
-
-
-
-
-
-
    return (
        <button
            className={niza.join(' ')}

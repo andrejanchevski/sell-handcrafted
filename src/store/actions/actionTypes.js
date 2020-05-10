@@ -45,3 +45,6 @@ export const ON_SELECT_ONE="ON_SELECT_ONE";
 export const ON_SELECT_TW0="ON_SELECT_TWO";
 export const ON_SELECT_THREE="ON_SELECT_THREE";
 
+export const SET_CATEGORY_AS_TREE="SET_CATEGORY_AS_TREE";
+
+

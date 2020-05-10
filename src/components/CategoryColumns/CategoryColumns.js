@@ -1,13 +1,14 @@
 import React,{useState} from "react";
 import Column from './Column/Column'
 
+
 const CategoryColumns  = (props) =>{
 
     const stateCat=useState({
         columnsCat:[
-            {category1:"Clothing",category2:"Accesories"},
-            {category1:"Cookies",category2:"Jewelry"},
-            {category1:"Sport",category2:"HomeDecor"}
+            {category1:"Clothing&Shoes",category2:"Accessories"},
+            {category1:"All",category2:"Jewellry"},
+            {category1:"Vintage",category2:"Home"}
         ]
     });
 

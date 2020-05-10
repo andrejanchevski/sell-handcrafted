@@ -1,24 +1,44 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Aux from "react-aux"
 import Footer from "../../containers/Footer/Footer";
-import RegiesterModal from "../../containers/RegiesterModal/RegiesterModal";
+import RegisterModal from "../../containers/RegiesterModal/RegiesterModal";
 import Toolbar from "../../containers/Toolbar/Toolbar";
 import Header from "../../containers/Header/Header";
+import {connect} from 'react-redux'
+import * as actions from "../../store/actions/generalActions";
+
 const layout=(props)=>{
+
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+   useEffect(()=>{
+
+   },[]);
 
     return(
         <Aux>
-            <Header/>
-            <Toolbar/>
-            <RegiesterModal/>
-            <main>
-                {props.children}
-            </main>
-            <Footer/>
-
+                <Header/>
+                <Toolbar/>
+                <RegisterModal/>
+                <main>
+                    {props.children}
+                </main>
+                <Footer/>
         </Aux>
     )
 
 };
+const mapStateToProps=(state)=>{
+    return{
+        categories:state.categoryReducer.categories
+    }
 
-export default layout;
+};
+
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        setCategoriesAsTree:(categories)=>dispatch(actions.setCategoriesAsTree(categories))
+    }
+
+};
+export default connect(mapStateToProps,mapDispatchToProps)(layout);

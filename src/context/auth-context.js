@@ -5,7 +5,8 @@ const authContext=React.createContext({
     materials:[],
     longDescription:"",
     productItems:[],
-    categories:[]
+    categories:[],
+    mainCategories:[]
 });
 
 

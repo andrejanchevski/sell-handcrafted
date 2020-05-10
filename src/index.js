@@ -1,5 +1,5 @@
-import $ from 'jquery'
-import Popper from "popper.js";
+// import $ from 'jquery'
+// import Popper from "popper.js";
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,12 +11,14 @@ import * as serviceWorker from './serviceWorker';
 import '@fortawesome/fontawesome-svg-core'
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from 'react-redux'
-import {createStore,combineReducers} from "redux";
+import {createStore,combineReducers,applyMiddleware} from "redux";
+import thunk from "redux-thunk";
 import selectReducer from "./store/reducers/selectReducer";
 import createShopReducer from "./store/reducers/createShopReducer";
 import registerModalReducer from "./store/reducers/registerModalReducer"
 import createProductReducer from "./store/reducers/createProductReducer"
 import tableAttributeReducer from './store/reducers/tableAttributeReducer'
+import categoryReducer from './store/reducers/categoryReducer'
 
 
 const rootReducer=combineReducers({
@@ -24,11 +26,13 @@ const rootReducer=combineReducers({
     createShopReducer:createShopReducer,
     registerModalReducer:registerModalReducer,
     createProductReducer:createProductReducer,
-    tableAttributeReducer:tableAttributeReducer
+    tableAttributeReducer:tableAttributeReducer,
+    categoryReducer:categoryReducer
 });
 
 
-const store=createStore(rootReducer);
+
+const store=createStore(rootReducer,applyMiddleware(thunk));
 const app=(
     <Provider store={store}>
         <BrowserRouter>

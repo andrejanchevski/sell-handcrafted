@@ -5,7 +5,6 @@ import * as actions from '../../../store/actions/generalActions'
 import Button from "../../../UI/Button/Button";
 import Select from "react-select";
 import TableAttribute from "../../TableAttribute/TableAttribute";
-import tableAttributeReducer from "../../../store/reducers/tableAttributeReducer";
 
 const attributes=[
     {name:"size_EU",value:"M"},
