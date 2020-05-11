@@ -1,14 +1,14 @@
 import React from "react";
-import classes from './Opis.module.css'
+import classes from './Description.module.css'
 import Button from "../../UI/Button/Button";
 
 
-const Opis = (props)=>(
+const Description = ()=>(
     <div className={classes.Background}>
         <div className="row pt-5 mr-0">
-            <div className="col"></div>
+            <div className="col"/>
             <div className="col text-center"><h2>What is SellMe?</h2></div>
-            <div className="col"></div>
+            <div className="col"/>
         </div>
         <div className="row mt-4 mr-0">
             <div className="col ml-3">
@@ -27,15 +27,15 @@ const Opis = (props)=>(
             </div>
         </div>
         <div className="row pt-5 pb-4 mr-0">
-            <div className="col"></div>
+            <div className="col"/>
             <div className="col text-center">
                 <h5 className="zaContact mb-3">Have a question? Well we got some answers!</h5>
                 <Button type="dark">Contact Us</Button>
             </div>
-            <div className="col"></div>
+            <div className="col"/>
         </div>
 
     </div>
 );
 
-export default Opis;
+export default Description;

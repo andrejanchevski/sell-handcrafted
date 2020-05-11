@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import Aux from "react-aux";
 import Carousel from '../../UI/Carousel/Carousel'
 import CategoryColumns from "../../components/CategoryColumns/CategoryColumns";
-import Opis from "../../components/Opis/Opis";
+import Description from "../../components/Description/Description";
 import ProductShopSD from "../../components/ProductsShopSD/ProductsShopSD";
 
 
@@ -20,7 +20,7 @@ class HomeBuilder extends Component{
             <Aux>
                 <Carousel/>
                 <CategoryColumns/>
-                <Opis/>
+                <Description/>
                 <ProductShopSD/>
             </Aux>
         )

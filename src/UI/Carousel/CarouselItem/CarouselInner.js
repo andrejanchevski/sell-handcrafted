@@ -15,17 +15,17 @@ const carouselInner = (props)=>{
                 />
                 <Carousel.Caption className="CarouselCaptions">
                     <Animated
-                        animationIn={props.dviziNaslov}
+                        animationIn="rotateInDownLeft"
                         isVisible={true}>
                         <p className="smallText">{props.title}</p>
                     </Animated>
                     <Animated
-                        animationIn={props.dviziP}
+                        animationIn="lightSpeedIn"
                         isVisible={true}>
-                        <p className="bigText">{props.customText}</p>
+                        <p className="bigText">New Arrivals</p>
                     </Animated>
                     <Animated
-                        animationIn={props.dviziKopce}
+                        animationIn="fadeInUp"
                         isVisible={true}>
                         <Button type="light" size="large">Shop Now</Button>
                     </Animated>

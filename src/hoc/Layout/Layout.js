@@ -12,6 +12,7 @@ const layout=(props)=>{
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
    useEffect(()=>{
+       props.initCategories();
 
    },[]);
 
@@ -37,7 +38,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return {
-        setCategoriesAsTree:(categories)=>dispatch(actions.setCategoriesAsTree(categories))
+        initCategories:()=>dispatch(actions.initCategories())
     }
 
 };

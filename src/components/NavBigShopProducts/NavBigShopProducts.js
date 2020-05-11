@@ -7,7 +7,7 @@ const NavBigShopProducts = (props)=>{
         <Aux>
             <h4 className="mb-4">Items</h4>
             <SearchSmallBar/>
-            <ListGroup categories={props.categories}/>
+            <ListGroup items={props.categories}/>
             <hr/>
             <p>{props.salesMade} Sales</p>
             <p>{props.shopItems} Items</p>

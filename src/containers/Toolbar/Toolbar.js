@@ -7,13 +7,14 @@ import {connect} from "react-redux";
 class Toolbar extends Component{
 
     componentDidMount() {
-       // this.props.initCategoriesAsTree(categoriesMain);
-
 
     }
 
     render() {
 
+        if(this.props.categories.length!==0){
+
+        }
         return(
             <Navbar  collapseOnSelect className={classes.Content} expand="lg" bg="white">
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>

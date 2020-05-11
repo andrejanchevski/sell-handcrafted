@@ -4,7 +4,7 @@ import {NavLink,withRouter} from 'react-router-dom'
 const CategoryListItem=(props)=>{
 
     return(
-        <li><NavLink to="/categories/Clothing&Shoes"> {props.catName}</NavLink></li>
+        <li><NavLink to={props.location.pathname+"/"+props.catName+"?id="+props.id}> {props.catName}</NavLink></li>
     )
 };
 

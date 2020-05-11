@@ -25,3 +25,7 @@
 .btn-dark:hover{
     background-color: darkorange;
 }
+
+.pushDown{
+    margin-top: 50%;
+}

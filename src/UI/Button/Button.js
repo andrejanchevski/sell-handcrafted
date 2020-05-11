@@ -17,6 +17,9 @@ const Button = (props)=> {
     }else if(props.size==="block"){
         niza.push("btn-block")
     }
+    if(props.customPush==="lg"){
+        niza.push("pushDown")
+    }
     if(props.push){
         niza.push("mt-5")
     }

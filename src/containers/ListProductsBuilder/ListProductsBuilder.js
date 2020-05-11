@@ -1,13 +1,12 @@
 import React,{Component} from "react";
 import classes from './ListProductsBuilder.module.css'
 import ProductMainFilter from "../../components/ProductMainFilter/ProductsMainFilter";
-import {Link, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
+import AllProducts from "../../components/AllProducts/AllProducts";
 
 class ListProductsBuilder extends Component{
 
     componentDidMount() {
-        console.log("mounted glavna")
-
     }
 
     render() {
@@ -20,7 +19,7 @@ class ListProductsBuilder extends Component{
                     <ProductMainFilter/>
                 </div>
                 <div className="col-9">
-
+                    <AllProducts/>
                 </div>
 
             </div>

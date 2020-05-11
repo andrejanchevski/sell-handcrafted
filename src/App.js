@@ -8,6 +8,7 @@ import CreateShopForm from "./containers/CreateShopForm/CreateShopForm";
 import ListProductsBuilder from "./containers/ListProductsBuilder/ListProductsBuilder";
 import ProductBuilder from "./containers/ProductBuilder/ProductBuilder";
 import CreateProductForm from "./containers/CreateProductForm/CreateProductForm";
+import ListShopsBuilder from "./containers/ListShopsBuilder/ListShopsBuilder";
 
 
 
@@ -16,11 +17,13 @@ function App() {
     <div>
       <Layout>
           <Switch>
-              <Route path="create-product" component={CreateProductForm}/>
-              <Route path="/shop/:id" component={ShopBuilder}/>
-              <Route path="/product/:id" component={ProductBuilder}/>
-              <Route path="/create-shop" component={CreateShopForm}/>
-              <Route path="/categories/:categoryName" component={ListProductsBuilder}/>
+              <Route path="/shops" exact component={ListShopsBuilder}/>
+              <Route path="/create-product"  exact component={CreateProductForm}/>
+              <Route path="/shop/:id" exact component={ShopBuilder}/>
+              <Route path="/product/:id"  exact component={ProductBuilder}/>
+              <Route path="/create-shop"  exact component={CreateShopForm}/>
+              <Route path="/categories/:categoryName" render={()=>
+                  <ListProductsBuilder key={window.location}/>   }/>
               <Route path="/" exact component={HomeBuilder}/>
           </Switch>
       </Layout>
