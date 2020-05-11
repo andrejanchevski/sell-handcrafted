@@ -17,7 +17,7 @@ class CreateProductForm extends Component{
 
         let niza=[styles.Background,"mt-4"];
         let disabled=true;
-        if(this.props.productItems.length!==0){
+        if(this.props.productItemCreationDTOS.length!==0){
             disabled=false
         }
         const onFormProductSubmit=(event)=>{
@@ -27,14 +27,12 @@ class CreateProductForm extends Component{
                 console.log(photo);
                 formData.append('formData',photo)
             });
-            console.log(formData)
-
             let wholeProduct={
                 ...this.props.product
             };
             delete wholeProduct.chosenAttributes;
             delete wholeProduct.productPhotos;
-            //this.props.sentProduct(wholeProduct,formData);
+            this.props.sentProduct(wholeProduct,formData);
 
         };
         return (
@@ -54,7 +52,7 @@ class CreateProductForm extends Component{
 const mapStateToProps=(state)=>{
     return {
         product:state.createProductReducer,
-        productItems:state.createProductReducer.productItems,
+        productItemCreationDTOS:state.createProductReducer.productItemCreationDTOS,
         categories:state.categoryReducer.categories
     }
 };

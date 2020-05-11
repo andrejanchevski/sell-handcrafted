@@ -23,31 +23,17 @@ const attributes=[
 class TableAttribute extends Component{
     render() {
 
-        function uuidv4() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                // eslint-disable-next-line no-mixed-operators
-                var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
-
-        let tableRows=this.props.productItems.map((el,index)=>{
-            return <TableRow key={el.productItemID} number={index} price={el.price} quantity={el.quantity} attributes={el.attributes}/>
+        let tableRows=this.props.productItemCreationDTOS.map((el,index)=>{
+            return <TableRow key={index} number={index} price={el.price} quantity={el.quantity} attributes={el.productItemAttributes}/>
         });
-
-
-
         let niza=[styles.Content,"mt-5"];
         let distinctAttributes=[...new Set(this.props.attributes.map(x=>x.label))];
-
         const leaders=distinctAttributes.map((el)=>{
             return <th key={el} scope="col">{el}</th>
         });
-
         const priceInputHandler=(event)=>{
             this.props.onPriceAdded(event.target.value);
         };
-
         const quantityInputHandler=(event)=>{
             this.props.onQuantityAdded(event.target.value);
         };
@@ -133,10 +119,9 @@ class TableAttribute extends Component{
                  }
              });
              let objToSend={
-                 productItemID:uuidv4(),
                  price:this.props.price,
                  quantity:this.props.quantity,
-                 attributes:attributes
+                 productItemAttributes:attributes
              };
              this.props.productVariantAdding(objToSend);
              this.props.clearAll()
@@ -190,7 +175,7 @@ const mapStateToProps=(state)=>{
         inputAttributeOneValue: state.tableAttributeReducer.inputAttributeOneValue,
         inputAttributeTwoValue: state.tableAttributeReducer.inputAttributeTwoValue,
         inputAttributeThreeValue: state.tableAttributeReducer.inputAttributeThreeValue,
-        productItems:state.createProductReducer.productItems
+        productItemCreationDTOS:state.createProductReducer.productItemCreationDTOS
     }
 };
 

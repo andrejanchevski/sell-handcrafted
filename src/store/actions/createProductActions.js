@@ -122,7 +122,7 @@ export const sentProduct=(product,formData)=>{
     return dispatch=>{
 
         //dispatch(sentPhotos(product,formData));
-        console.log(formData)
+        console.log(formData);
         console.log(product)
     }
 

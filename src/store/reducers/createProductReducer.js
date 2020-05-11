@@ -4,10 +4,10 @@ const initalState={
     productName:"",
     productDescription:"",
     productPhotos:[],
-    productCategoryID:"",
+    productCategoryId:"",
     materials:[],
     productSKU:"",
-    productItems:[],
+    productItemCreationDTOS:[],
     chosenAttributes:[]
 };
 
@@ -58,7 +58,7 @@ const reducer = (state=initalState,action)=>{
         case actionTypes.PRODUCT_CATEGORY_SELECTED:
             return {
                 ...state,
-                productCategoryID: action.productCategory.value
+                productCategoryId: action.productCategory.value
             };
         case actionTypes.MATERIAL_ADDED:
             return{
@@ -88,12 +88,12 @@ const reducer = (state=initalState,action)=>{
         case actionTypes.PRODUCT_ITEM_ADDED:
             return{
                 ...state,
-                productItems: state.productItems.concat(action.productItem)
+                productItemCreationDTOS: state.productItemCreationDTOS.concat(action.productItem)
             };
         case actionTypes.DELETE_PRODUCT_ITEM:
             return {
                 ...state,
-                productItems: state.productItems.filter((value,index)=>index!==action.productItemIndex)
+                productItemCreationDTOS: state.productItemCreationDTOS.filter((value,index)=>index!==action.productItemIndex)
             };
         default:
             return state;
