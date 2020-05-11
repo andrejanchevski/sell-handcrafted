@@ -40,7 +40,8 @@ export {
     selectSecondAttribute,
     selectThirdAttribute,
     addProductVariaton,
-    deleteProductVariaton
+    deleteProductVariaton,
+    sentProduct
 } from './createProductActions'
 
 export {

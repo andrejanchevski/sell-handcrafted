@@ -4,6 +4,8 @@ import NavRight from "./NavRight/NavRight";
 import NavMiddle from "./NavMiddle/NavMiddle";
 import classes from './Toolbar.module.css'
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
+
 class Toolbar extends Component{
 
     componentDidMount() {
@@ -17,7 +19,7 @@ class Toolbar extends Component{
         }
         return(
             <Navbar  collapseOnSelect className={classes.Content} expand="lg" bg="white">
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand>React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <NavMiddle/>

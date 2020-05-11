@@ -6,32 +6,38 @@ import Select from "react-select";
 
 
 
-const categories=[
-    {id:2334,name:"Clothing&Shoes"},
-    {id:4444,name:"Accesories"},
-    {id:11111,name:"Jewelry"},
-    {id:876,name:"Home"}
-];
 
 
 const ProdInfo=(props)=>{
 
     const [materialNow,setMaterialNow]=useState("");
     let nizaKlasi=[styles.Block,"mt-5"];
+    let nizaOptions;
 
-    let nizaOptions=categories.map((el)=>{
-        return{
-            value:el.id,
-            label:el.name
-        }
-    });
+
+    const renderChild=(children,res,base)=>{
+        children.forEach((node)=>{
+            res.push({label:base+"/"+node.name,value:node.id});
+            if(node.children){
+                renderChild(node.children,res,base+"/"+node.name)
+            }else
+            {
+                return
+            }
+        });
+        return res;
+    };
+    if(props.categories.length!==0){
+        let chosenItem=props.categories.filter((value)=>value.name===props.shopCategory)[0];
+        nizaOptions=renderChild(chosenItem.children,[],chosenItem.name);
+    }
+
 
     let showMaterials=props.materials.map((el,index)=>{
         if(index===0){
             return <button disabled key={index}  className="btn btn-dark">{el}</button>
         }
         return <button disabled key={index}  className="btn btn-dark ml-3">{el}</button>
-
 
     });
 
@@ -120,7 +126,8 @@ const ProdInfo=(props)=>{
 
 const mapStateToProps=(state)=>{
     return {
-        materials:state.createProductReducer.materials
+        materials:state.createProductReducer.materials,
+        categories:state.categoryReducer.categories
     }
 };
 

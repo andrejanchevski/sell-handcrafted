@@ -4,8 +4,13 @@ import {Animated} from "react-animated-css";
 import './CarouselInner.css'
 import Button from "../../Button/Button";
 import Aux from "react-aux"
+import {withRouter} from "react-router-dom";
 
 const carouselInner = (props)=>{
+    const onClickHandler=(event,to)=>{
+        event.preventDefault();
+        props.history.push("/categories/"+to)
+    };
     return (
         <Aux>
                 <img
@@ -27,7 +32,7 @@ const carouselInner = (props)=>{
                     <Animated
                         animationIn="fadeInUp"
                         isVisible={true}>
-                        <Button type="light" size="large">Shop Now</Button>
+                        <Button type="light" size="large" clicked={(event)=>onClickHandler(event,props.title)}>Shop Now</Button>
                     </Animated>
                 </Carousel.Caption>
         </Aux>
@@ -35,4 +40,4 @@ const carouselInner = (props)=>{
 };
 
 
-export default carouselInner;
+export default withRouter(carouselInner);

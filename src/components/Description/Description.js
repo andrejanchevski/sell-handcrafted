@@ -1,9 +1,10 @@
 import React from "react";
 import classes from './Description.module.css'
 import Button from "../../UI/Button/Button";
+import {withRouter} from "react-router-dom";
 
+const Description = (props)=>(
 
-const Description = ()=>(
     <div className={classes.Background}>
         <div className="row pt-5 mr-0">
             <div className="col"/>
@@ -30,7 +31,7 @@ const Description = ()=>(
             <div className="col"/>
             <div className="col text-center">
                 <h5 className="zaContact mb-3">Have a question? Well we got some answers!</h5>
-                <Button type="dark">Contact Us</Button>
+                <Button type="dark" clicked={(event)=>{event.preventDefault();props.history.push("/contact")}}>Contact Us</Button>
             </div>
             <div className="col"/>
         </div>
@@ -38,4 +39,4 @@ const Description = ()=>(
     </div>
 );
 
-export default Description;
+export default withRouter(Description);

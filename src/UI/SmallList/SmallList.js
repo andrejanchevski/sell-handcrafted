@@ -16,8 +16,8 @@ const SmallList=(props)=>{
         listItems=[
             <li className="pb-2" key="123123"><Link to="/">Home</Link></li>,
             <li className="pb-2" key='1232'><Link to="/categories/All">Products</Link></li>,
-            <li className="pb-2" key="213213"><Link to="">Shops</Link></li>,
-            <li className="pb-2" key="2332222"><Link to="/">Contact</Link></li>
+            <li className="pb-2" key="213213"><Link to="/shops">Shops</Link></li>,
+            <li className="pb-2" key="2332222"><Link to="/contact">Contact</Link></li>
         ]
     }
 

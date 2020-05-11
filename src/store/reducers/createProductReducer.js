@@ -86,7 +86,6 @@ const reducer = (state=initalState,action)=>{
                 chosenAttributes: state.chosenAttributes.concat(action.selectedItem)
             };
         case actionTypes.PRODUCT_ITEM_ADDED:
-            console.log("ADDING");
             return{
                 ...state,
                 productItems: state.productItems.concat(action.productItem)
@@ -98,7 +97,6 @@ const reducer = (state=initalState,action)=>{
             };
         default:
             return state;
-
 
 
     }

@@ -7,6 +7,7 @@ import AllProducts from "../../components/AllProducts/AllProducts";
 class ListProductsBuilder extends Component{
 
     componentDidMount() {
+        //console.log("glavna")
     }
 
     render() {

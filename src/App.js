@@ -9,6 +9,7 @@ import ListProductsBuilder from "./containers/ListProductsBuilder/ListProductsBu
 import ProductBuilder from "./containers/ProductBuilder/ProductBuilder";
 import CreateProductForm from "./containers/CreateProductForm/CreateProductForm";
 import ListShopsBuilder from "./containers/ListShopsBuilder/ListShopsBuilder";
+import Contact from "./components/Contact/Contact";
 
 
 
@@ -17,8 +18,9 @@ function App() {
     <div>
       <Layout>
           <Switch>
+              <Route path="/contact" exact component={Contact}/>
               <Route path="/shops" exact component={ListShopsBuilder}/>
-              <Route path="/create-product"  exact component={CreateProductForm}/>
+              <Route path="/create-product/:categoryName"  exact component={CreateProductForm}/>
               <Route path="/shop/:id" exact component={ShopBuilder}/>
               <Route path="/product/:id"  exact component={ProductBuilder}/>
               <Route path="/create-shop"  exact component={CreateShopForm}/>

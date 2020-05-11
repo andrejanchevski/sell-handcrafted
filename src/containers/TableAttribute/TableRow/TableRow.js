@@ -18,7 +18,7 @@ const TableRow=(props)=>{
 
     };
 
-    console.log(props.attributes)
+    // console.log(props.attributes)
     return(
 
         <tr>

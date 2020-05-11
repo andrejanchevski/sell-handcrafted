@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {faStore} from "@fortawesome/free-solid-svg-icons";
 import {faCartArrowDown} from "@fortawesome/free-solid-svg-icons";
+import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
 import * as actions from '../../../store/actions/generalActions'
 import NavBarDropDownCardItem from "../NavBarDropDownCardItem/NavBarDropDownCardItem";
 import './dropDownMenuSize.css'
@@ -53,8 +54,9 @@ const NavRight=(props)=>{
                     </div>
                 </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="" className="border-left border-right pl-3 pr-3" onClick={onRegisterModalOpen}><span>Hi,{props.user} <FontAwesomeIcon icon={faUser} size="2x"/></span></Nav.Link>
-            <Nav.Link href="" className="pl-3 pr-3" onClick={openStoreForm}><FontAwesomeIcon icon={faStore} size="2x"/></Nav.Link>
+            <Nav.Link className="border-left pl-3 pr-3" onClick={onRegisterModalOpen}><span>Join Us  <FontAwesomeIcon icon={faSignInAlt} size="2x"/></span></Nav.Link>
+            <Nav.Link className="border-left border-right pl-3 pr-3"><span>Hi,{props.user} <FontAwesomeIcon icon={faUser} size="2x"/></span></Nav.Link>
+            <Nav.Link className="pl-3 pr-3" onClick={openStoreForm}><FontAwesomeIcon icon={faStore} size="2x"/></Nav.Link>
         </Nav>
     )
 

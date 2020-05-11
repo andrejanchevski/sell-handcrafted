@@ -112,6 +112,23 @@ export const deleteProductVariaton=(productItemIndex)=>{
     }
 };
 
+export const sentPhotos=(product,formData)=>{
+    return dispatch=>{
+        console.log(formData)
+    }
+};
+
+export const sentProduct=(product,formData)=>{
+    return dispatch=>{
+
+        //dispatch(sentPhotos(product,formData));
+        console.log(formData)
+        console.log(product)
+    }
+
+};
+
+
 
 
 
