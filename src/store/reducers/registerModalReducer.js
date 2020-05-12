@@ -2,10 +2,10 @@ import * as actionTypes from '../actions/actionTypes'
 
 const initalState={
     modalOpen:false,
-    userFirstName:"",
-    userLastName:"",
-    userEmail:"",
-    userPassword:"",
+    firstName:"",
+    lastName:"",
+    email:"",
+    password:"",
     confirmPassword:""
 };
 
@@ -25,35 +25,31 @@ const reducer = (state=initalState,action)=>{
         case actionTypes.ADD_USER_FIRST_NAME:
             return {
                 ...state,
-                userFirstName: action.firstName
+                firstName: action.firstName
             };
         case actionTypes.ADD_USER_LAST_NAME:
             return {
                 ...state,
-                userLastName: action.lastName
+                lastName: action.lastName
             };
         case actionTypes.ADD_USER_EMAIL:
             return {
                 ...state,
-                userEmail: action.email
+                email: action.email
             };
         case actionTypes.ADD_USER_PASSWORD:
             return {
                 ...state,
-                userPassword: action.password
+                password: action.password
             };
         case actionTypes.CONFIRM_PASSWORD:
             return{
                 ...state,
                 confirmPassword: action.cPassword
-
             };
         default:
             return state
     }
-
-
-
 };
 
 

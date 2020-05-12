@@ -2,13 +2,12 @@ import * as actionTypes from '../actions/actionTypes'
 
 const initalState={
     shopName:"",
-    shortDesc:"",
-    mainCategory:"",
+    shopDescription:"",
+    shopCategory:"",
     shopUTN:"",
-    shopBankAccountNumber:"",
+    shopBankAccount:"",
     shopProfilePicture:"",
     shopCoverPhoto:""
-
 };
 
 
@@ -23,12 +22,12 @@ const reducer=(state=initalState,action)=>{
         case actionTypes.SHOP_SHORT_DESC_ENTERED:
             return{
                 ...state,
-                shortDesc: action.shopDesc
+                shopDescription: action.shopDesc
             };
         case actionTypes.SHOP_CATEGORY_SELECTED:
             return{
                 ...state,
-                mainCategory: action.shopCategory
+                shopCategory: action.shopCategory
             };
         case actionTypes.SHOP_UTN_ADDED:
             return{
@@ -38,7 +37,7 @@ const reducer=(state=initalState,action)=>{
         case actionTypes.SHOP_BA_ADDED:
             return {
                 ...state,
-                shopBankAccountNumber: action.shopBA
+                shopBankAccount: action.shopBA
             };
         case actionTypes.SHOP_PROFILE_PICTURE_ADDED:
             return{

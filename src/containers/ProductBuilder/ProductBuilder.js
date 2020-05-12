@@ -1,30 +1,23 @@
 import React,{Component} from "react";
 import Aux from "react-aux";
-import Breadcrumb from "../../UI/BreadCrumbs/BreadCrumbs";
+// import Breadcrumb from "../../UI/BreadCrumbs/BreadCrumbs";
 import ShortShop from "../ShortShop/ShortShop";
 import classes from './ProductBuilder.module.css'
 import ImageProductPart from "../../components/ImageProductPart/ImageProductPart";
 import BuyProductPart from "../../components/BuyProductPart/BuyProductPart";
 import AuthContext from "../../context/auth-context";
 import ReviewProductBuilder from "../ReviewProductBuilder/ReviewProductBuilder";
+import {connect} from 'react-redux'
+import * as actions from '../../store/actions/generalActions'
 
 class ProductBuilder extends Component{
 
-
     componentDidMount() {
-        //tuka povika za shop
-        //tuka povik za product
+        this.props.getProductById('e1db3791-e4e5-4805-ab5c-3cacb7588eda');
+        console.log("OOPPPPPA")
     }
-
     state={
-        id:"2232323",
-        name:"Wooden Watch",
-        generalPrice:22,
-        shortDesc:"Something something something something something",
-        longDesc:"Something something something something something Something something something something something Something something something something something Something something something something something Something something something something something",
         materials:["silk","cotton"],
-        productRating:4.8,
-        productRatings:2323,
         productItems:[
             {
                 productItemID:232323e23,
@@ -62,7 +55,7 @@ class ProductBuilder extends Component{
     render() {
         return(
             <Aux>
-                <Breadcrumb/>
+                {/*<Breadcrumb/>*/}
                 <div className={classes.Background}>
                     <div className="row">
                         <ImageProductPart productRating={this.state.productRating} productRatings={this.state.productRatings}/>
@@ -77,16 +70,25 @@ class ProductBuilder extends Component{
                             />
                         </AuthContext.Provider>
                         <ReviewProductBuilder productReviews={this.state.productReviews}/>
-
-
                     </div>
                 </div>
                 <ShortShop/>
-
             </Aux>
         );
     }
-
 }
 
-export default ProductBuilder;
+const mapStateToProps=(state)=>{
+    return {
+
+    }
+
+};
+
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        getProductById:(productId)=>dispatch(actions.getProductById(productId))
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProductBuilder);

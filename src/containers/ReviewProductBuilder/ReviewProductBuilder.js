@@ -1,25 +1,30 @@
 import React from "react";
 import Review from "../../UI/Review/Review";
 import classes from './ReviewProductBuilder.module.css'
-import InsertReviewForm from "./InsertReviewForm/InsertReviewForm";
+// import InsertReviewForm from "./InsertReviewForm/InsertReviewForm";
+import {connect} from 'react-redux'
 
 const ReviewProductBuilder=(props)=>{
 
-    let nizaReviews=[...props.productReviews];
 
-     const komentari = nizaReviews.map((el)=>{
+     const komentari =props.productReviews.map((el)=>{
          return <Review key={el.commentID} name={el.userName} commentar={el.text} show={true}/>
     });
-
 
     return (
         <div className={["col-6",classes.Content].join(" ")}>
             {komentari}
-            <InsertReviewForm/>
+            {/*<InsertReviewForm/>*/}
         </div>
     )
 
 
 };
 
-export default ReviewProductBuilder;
+const mapStateToProps=(state)=>{
+    return {
+        productReviews:state.productReducer.productReviews
+    }
+}
+
+export default connect(mapStateToProps)(ReviewProductBuilder);

@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes'
+import axios from '../../custom-axios/axios'
 
 export const addProductName=(productName)=>{
     return {
@@ -112,18 +113,44 @@ export const deleteProductVariaton=(productItemIndex)=>{
     }
 };
 
-export const sentPhotos=(product,formData)=>{
+export const sentPhotos=(productImages,productId)=>{
     return dispatch=>{
-        console.log(formData)
+        axios.post('api/productsImages?productId='+productId,
+            productImages,{
+                headers: {'shopName' :"Andrej's Home Shop"}
+            })
+            .then(res => {
+                console.log(res)
+            });
+    }
+};
+
+export const initializeStartingAttributes=(startingAttributes)=>{
+    return {
+        type:actionTypes.INITIALIZE_ATTRIBUTES,
+        startingAttributes:startingAttributes
+    }
+};
+
+export const getStartingAttributes=()=>{
+    return dispatch=>{
+        axios.get("/api/attributes/all").then(resp=>{
+            dispatch(initializeStartingAttributes(resp.data))
+        }).catch(err=>{
+            console.log(err)
+        })
     }
 };
 
 export const sentProduct=(product,formData)=>{
     return dispatch=>{
-
-        //dispatch(sentPhotos(product,formData));
-        console.log(formData);
-        console.log(product)
+        axios.post("/api/products/create", product, {
+            headers: {
+                'Content-Type': "application/json"
+            }
+        }).then((resp) => {
+            dispatch(sentPhotos(formData,resp.data))
+        });
     }
 
 };

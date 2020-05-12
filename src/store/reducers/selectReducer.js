@@ -11,20 +11,16 @@ const initalState={
 };
 
 const reducer=(state=initalState,action)=>{
-
-
-
     switch (action.type) {
         case actionTypes.ADD_FIRST_OPTIONS:
             let newObj={};
             action.productItems.forEach((pi)=>{
                let str='';
                pi.attributes.forEach((ai)=>{
-                  str+=ai.value+"/";
+                  str+=ai.attributeValue+"/";
                });
                str=str+'$'+pi.price;
-               newObj[str]=pi.quantity;
-
+               newObj[str]=pi.quantityInStock;
             });
 
             return {

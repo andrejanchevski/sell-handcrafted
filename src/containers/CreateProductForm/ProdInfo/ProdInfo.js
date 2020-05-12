@@ -17,9 +17,9 @@ const ProdInfo=(props)=>{
 
     const renderChild=(children,res,base)=>{
         children.forEach((node)=>{
-            res.push({label:base+"/"+node.name,value:node.id});
+            res.push({label:base+"/"+node.categoryName,value:node.categoryId});
             if(node.children){
-                renderChild(node.children,res,base+"/"+node.name)
+                renderChild(node.children,res,base+"/"+node.categoryName)
             }else
             {
                 return
@@ -28,8 +28,8 @@ const ProdInfo=(props)=>{
         return res;
     };
     if(props.categories.length!==0){
-        let chosenItem=props.categories.filter((value)=>value.name===props.shopCategory)[0];
-        nizaOptions=renderChild(chosenItem.children,[],chosenItem.name);
+        let chosenItem=props.categories.filter((value)=>value.categoryName===props.shopCategory)[0];
+        nizaOptions=renderChild(chosenItem.children,[],chosenItem.categoryName);
     }
 
 

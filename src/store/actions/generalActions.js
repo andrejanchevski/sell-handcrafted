@@ -10,7 +10,8 @@ export {
     addShopUTN,
     addShopBA,
     addShopProfilePicture,
-    addShopCoverPhoto
+    addShopCoverPhoto,
+    createShop
 } from './createShopActions'
 
 export {
@@ -20,7 +21,8 @@ export {
     addUserLastName,
     addUserEmail,
     addUserPassword,
-    confrimPassword
+    confrimPassword,
+    createUser
 
 } from './registerModalActions'
 
@@ -41,7 +43,8 @@ export {
     selectThirdAttribute,
     addProductVariaton,
     deleteProductVariaton,
-    sentProduct
+    sentProduct,
+    getStartingAttributes
 } from './createProductActions'
 
 export {
@@ -62,4 +65,11 @@ export {
     initCategories
 
 } from "./categoryActions"
+
+
+export {
+    getProductById,
+    setProductPrice
+
+} from './productActions'
 

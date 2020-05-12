@@ -8,10 +8,16 @@ import {withRouter} from "react-router-dom";
 const column=(props)=>{
     const onClickRedirect=(event,to,id)=>{
         event.preventDefault();
-        props.history.push("/categories/"+to+"?="+id);
+        //console.log(id);
+        if(id===""){
+            props.history.push("/categories/"+to);
+        }else
+        {
+            props.history.push("/categories/"+to+"?="+id);
+        }
+
+
     };
-
-
     if(props.broj%2!==0){
         return (
             <div className="col">

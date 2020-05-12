@@ -8,7 +8,7 @@ class CarouselElem extends Component{
     render() {
 
         const elementi = this.props.categories.slice(0,3).map((el,index)=>{
-            return <Carousel.Item key={el.id}> <CarouselInner title={el.name}/> </Carousel.Item>
+            return <Carousel.Item key={el.categoryId}> <CarouselInner title={el.categoryName}/> </Carousel.Item>
         });
         return (
             <div className="container-fluid mt-3">

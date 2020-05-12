@@ -10,23 +10,24 @@ import styles from './ShowCategories.module.css'
 
 class ShowCategories extends Component{
 
-
     renderChild=(child)=>{
-        if (child.children && child.children.length!==0) {
-            return (
-                <Aux>
-                    <CategoryListItem catName={child.name} id={child.id} key={child.id}/>
-                    <CategoryList>
-                        {child.children.map(item => {
-                            return this.renderChild(item);
-                        })}
-                    </CategoryList>
-                </Aux>
+        if (child.children!==undefined) {
+            if(child.children.length!==0){
+                return (
+                    <Aux>
+                        <CategoryListItem catName={child.categoryName} id={child.categoryId} key={child.categoryId}/>
+                        <CategoryList>
+                            {child.children.map(item => {
+                                return this.renderChild(item);
+                            })}
+                        </CategoryList>
+                    </Aux>
 
-            );
+                );
+            }
         }
         else if (child.name!=="") {
-            return <CategoryListItem key={child.id} id={child.id} catName={child.name}/>;
+            return <CategoryListItem key={child.categoryId} id={child.categoryId} catName={child.categoryName}/>;
         }
         return null;
 
@@ -42,14 +43,14 @@ class ShowCategories extends Component{
             let niza=this.props.location.pathname.split("/");
             if(niza[niza.length-1]==="All"){
                 let podlista=this.props.categories.map(el=>{
-                    return <CategoryListItem catName={el.name}  id={el.id} key={el.id}/>
+                    return <CategoryListItem catName={el.categoryName}  id={el.categoryId} key={el.categoryId}/>
                 });
                 lista=<CategoryList>{podlista}</CategoryList>
             }else if(niza.length>3){
-                let chosenItem=this.props.categories.filter((value)=>value.name===niza[3]);
+                let chosenItem=this.props.categories.filter((value)=>value.categoryName===niza[2]);
                 lista=<CategoryList>{this.renderChild(chosenItem[0])}</CategoryList>;
             }else if(niza.length===3 && niza[niza.length-1]!=="All"){
-                let chosenItem=this.props.categories.filter((value)=>value.name===niza[2]);
+                let chosenItem=this.props.categories.filter((value)=>value.categoryName===niza[2]);
                 lista=<CategoryList>{this.renderChild(chosenItem[0])}</CategoryList>;
             }
         }

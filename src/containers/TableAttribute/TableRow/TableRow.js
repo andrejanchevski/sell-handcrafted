@@ -17,15 +17,13 @@ const TableRow=(props)=>{
         props.deleteProductItem(index);
 
     };
-
-    // console.log(props.attributes)
     return(
 
         <tr>
             <td>{props.number}</td>
             {atributi}
-            <td>{props.price}</td>
             <td>{props.quantity}</td>
+            <td>{props.price}</td>
             <td><button className="btn btn-light" onClick={(event)=>deleteProductItem(event,props.number)}><FontAwesomeIcon icon={faTimes}/></button></td>
         </tr>
     )

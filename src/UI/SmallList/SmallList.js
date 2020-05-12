@@ -9,7 +9,7 @@ const SmallList=(props)=>{
     if(props.title==="Categories"){
         if(props.categories.length!==0){
             listItems=props.categories.slice(0,4).map((el)=>{
-                return <li className="pb-2" key={el.id}><Link to={"/categories/"+el.name+"?="+el.id}>{el.name}</Link></li>
+                return <li className="pb-2" key={el.categoryId}><Link to={"/categories/"+el.categoryName+"?="+el.categoryId}>{el.categoryName}</Link></li>
             });
         }
     }else{

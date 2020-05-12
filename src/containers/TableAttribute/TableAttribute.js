@@ -7,22 +7,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import * as actions from "../../store/actions/generalActions"
 import TableRow from "./TableRow/TableRow";
 
-const attributes=[
-    {name:"size_EU",value:"M"},
-    {name:"size_EU",value:"L"},
-    {name:"size_EU",value:"XL"},
-    {name:"size_EU",value:"S"},
-    {name:"color",value:"red"},
-    {name:"color",value:"blue"},
-    {name:"color",value:"yellow"},
-    {name:"color",value:"green"},
-    {name:"LENGTH_CM",value:"100"},
-    {name:"LENGTH_CM",value:"130"},
-    {name:"LENGTH_CM",value:"150"},
-];
 class TableAttribute extends Component{
     render() {
-
         let tableRows=this.props.productItemCreationDTOS.map((el,index)=>{
             return <TableRow key={index} number={index} price={el.price} quantity={el.quantity} attributes={el.productItemAttributes}/>
         });
@@ -72,11 +58,11 @@ class TableAttribute extends Component{
         };
 
         const polinja=distinctAttributes.map((el,index)=>{
-            if(el.startsWith("size") || el==="color"){
-                let options=attributes.map((el1)=>{
-                    if(el1.name===el){
+            if(el.startsWith("SIZE") || el==="COLOR"){
+                let options=this.props.existingAttributes.map((el1)=>{
+                    if(el1.attributeName===el){
                         return{
-                            label:el1.value,
+                            label:el1.attributeValue,
                             value:el
                         }
                     }
@@ -164,6 +150,7 @@ class TableAttribute extends Component{
 const mapStateToProps=(state)=>{
     return{
         attributes:state.createProductReducer.chosenAttributes,
+        existingAttributes:state.createProductReducer.startingAttributes,
         price:state.tableAttributeReducer.price,
         quantity: state.tableAttributeReducer.quantity,
         inputAttributeOne:state.tableAttributeReducer.inputAttributeOne,
@@ -191,8 +178,6 @@ const mapDispatchToProps=(dispatch)=>{
         selectThreeAdding:(selectAttributeThree)=>dispatch(actions.addOnSelectThree(selectAttributeThree)),
         productVariantAdding:(productItem)=>dispatch(actions.addProductVariaton(productItem)),
         clearAll:()=>dispatch(actions.clear())
-
-
 
     }
 };

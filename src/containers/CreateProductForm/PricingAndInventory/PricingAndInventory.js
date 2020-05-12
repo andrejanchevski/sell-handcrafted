@@ -5,33 +5,24 @@ import * as actions from '../../../store/actions/generalActions'
 import Button from "../../../UI/Button/Button";
 import Select from "react-select";
 import TableAttribute from "../../TableAttribute/TableAttribute";
-
-const attributes=[
-    {name:"size_EU",value:"M"},
-    {name:"size_EU",value:"L"},
-    {name:"size_EU",value:"XL"},
-    {name:"size_EU",value:"S"},
-    {name:"color",value:"red"},
-    {name:"color",value:"blue"},
-    {name:"color",value:"yellow"},
-    {name:"color",value:"green"},
-    {name:"LENGTH_CM",value:"100"},
-    {name:"LENGTH_CM",value:"130"},
-    {name:"LENGTH_CM",value:"150"},
-];
 const PricingAndInventory=(props)=>{
 
     const [tableOpen,setTableOpen]=useState(false);
+
     let nizaKlasi=[styles.Block,"mt-5","mb-5"];
     let disabled;
     let tabela=null;
-    const distinctAttributes=[...new Set(attributes.map(x=>x.name))];
-    let attributeOptions=distinctAttributes.map(el=>{
-        return {
-            label:el,
-            value:el
-        }
-    });
+    let attributeOptions;
+    if(props.existingAttributes.length!==0){
+        const distinctAttributes=[...new Set(props.existingAttributes.map(x=>x.attributeName))];
+        attributeOptions=distinctAttributes.map(el=>{
+            return {
+                label:el,
+                value:el
+            }
+        });
+    }
+
     if(tableOpen){
         tabela=<TableAttribute/>
     }else{
@@ -102,6 +93,7 @@ const PricingAndInventory=(props)=>{
 const mapStateToProps=(state)=>{
     return{
         attributes:state.createProductReducer.chosenAttributes,
+        existingAttributes:state.createProductReducer.startingAttributes
     }
 };
 

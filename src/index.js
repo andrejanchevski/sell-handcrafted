@@ -19,6 +19,7 @@ import registerModalReducer from "./store/reducers/registerModalReducer"
 import createProductReducer from "./store/reducers/createProductReducer"
 import tableAttributeReducer from './store/reducers/tableAttributeReducer'
 import categoryReducer from './store/reducers/categoryReducer'
+import productReducer from './store/reducers/productReducer'
 
 
 const rootReducer=combineReducers({
@@ -27,7 +28,8 @@ const rootReducer=combineReducers({
     registerModalReducer:registerModalReducer,
     createProductReducer:createProductReducer,
     tableAttributeReducer:tableAttributeReducer,
-    categoryReducer:categoryReducer
+    categoryReducer:categoryReducer,
+    productReducer:productReducer
 });
 
 

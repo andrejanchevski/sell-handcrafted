@@ -3,6 +3,7 @@ import styles from './BuyProductPart.module.css'
 import Rating from "../../UI/Rating/Rating";
 import SelectPart from "./SelectPart/SelectPart";
 import TextToogle from "../../UI/TextToogle/TextToogle";
+import {connect} from 'react-redux'
 
 const BuyProductPart=(props)=>{
 
@@ -17,9 +18,9 @@ const BuyProductPart=(props)=>{
                     </div>
                 </div>
                 <hr/>
-                    <h3 className="mt-2">{props.title}</h3>
-                    <h3 className="mt-3">${props.price}</h3>
-                    <p className={styles.ShortDescription}>{props.shortDesc}</p>
+                    <h3 className="mt-2">{props.productName}</h3>
+                    <h3 className="mt-3">${props.productPrice}</h3>
+                    {/*<p className={styles.ShortDescription}>{props.shortDesc}</p>*/}
                     <SelectPart/>
                     <TextToogle title="Description"/>
                     <TextToogle title="Materials"/>
@@ -54,4 +55,17 @@ const BuyProductPart=(props)=>{
     )
 };
 
-export default BuyProductPart;
+const mapStateToProps=(state)=>{
+    return {
+        productName:state.productReducer.productName,
+        productPrice:state.productReducer.price
+    }
+};
+
+const mapDispatchToProps=(dispatc)=>{
+    return{
+
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(BuyProductPart);

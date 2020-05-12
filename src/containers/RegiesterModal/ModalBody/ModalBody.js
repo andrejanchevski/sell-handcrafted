@@ -24,18 +24,19 @@ const ModalBody=(props)=>{
     };
     const onInputConfirmHandler=(event)=>{
         props.onPasswordConfirmed(event.target.value)
-
     };
     const checkValidity=()=>{
-
         disabled = props.userFirstName.trim() !== "" && props.userEmail.trim() !== ""  && props.userPassword !== "" && props.userPassword===props.confirmPassword;
     };
     const onSubmitHandler=(event)=>{
         event.preventDefault();
-        console.log(props.userFirstName);
-        console.log(props.userLastName);
-        console.log(props.userEmail);
-        console.log(props.userPassword)
+        let user={
+            ...props.user
+        };
+        delete user.modalOpen;
+        delete user.confirmPassword;
+        props.createUser(user)
+
     };
     checkValidity();
     return (
@@ -84,7 +85,7 @@ const ModalBody=(props)=>{
                                aria-describedby="passwordHelp" placeholder="Password"/>
                     </div>
                     <div className="form-group">
-                        <input type="text"
+                        <input type="password"
                                onChange={onInputConfirmHandler}
                                className="form-control" id="exampleInputConfirmPassword"
                                aria-describedby="confirmPasswordHelp" placeholder="Confirm Password"/>
@@ -112,12 +113,12 @@ const ModalBody=(props)=>{
 
 const mapStateToProps=(state)=>{
     return{
-        userFirstName:state.registerModalReducer.userFirstName,
-        userLastName:state.registerModalReducer.userLastName,
-        userEmail:state.registerModalReducer.userEmail,
-        userPassword:state.registerModalReducer.userPassword,
-        confirmPassword: state.registerModalReducer.confirmPassword
-
+        userFirstName:state.registerModalReducer.firstName,
+        userLastName:state.registerModalReducer.lastName,
+        userEmail:state.registerModalReducer.email,
+        userPassword:state.registerModalReducer.password,
+        confirmPassword: state.registerModalReducer.confirmPassword,
+        user:state.registerModalReducer
     }
 };
 
@@ -129,6 +130,7 @@ const mapDispatchToProps=(dispatch)=>{
         onPasswordAdded:(password)=>dispatch(actions.addUserPassword(password)),
         onPasswordConfirmed:(cPassword)=>dispatch(actions.confrimPassword(cPassword)),
         closeRegisterModal:()=>dispatch(actions.closeRegisterModal()),
+        createUser:(user)=>dispatch(actions.createUser(user))
     }
 };
 

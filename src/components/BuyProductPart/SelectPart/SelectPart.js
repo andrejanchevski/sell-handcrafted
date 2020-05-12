@@ -1,5 +1,4 @@
-import React,{useContext,useEffect} from "react";
-import AuthContext from "../../../context/auth-context";
+import React from "react";
 import Button from "../../../UI/Button/Button";
 import SelectCustomized from "../../../UI/Select/Select";
 import * as actions from '../../../store/actions/generalActions'
@@ -9,19 +8,15 @@ import {connect} from "react-redux";
 
 const SelectPart=(props)=>{
 
-    const authContext=useContext(AuthContext);
-
-
-    useEffect(()=>{
-        let productVariatons=authContext.productItems;
-        props.onMountFirstOptions(productVariatons);
-    },[]);
-
 
     const selectedOptionHandler=(selectedOption)=>{
         console.log(selectedOption);
+        let niza = selectedOption.value.split("/");
+        let priceWithSign=niza[niza.length-1].split("");
+        priceWithSign=priceWithSign.splice(1,priceWithSign.length-1);
+        priceWithSign=priceWithSign.join("");
+        props.setProductPrice(priceWithSign);
         props.onSelectedVariant(selectedOption.value)
-
     };
 
     return (
@@ -49,13 +44,14 @@ const mapStateToProps=state=>{
         optionsQ:state.selectReducer.optionsQuantity,
         sOpv:state.selectReducer.selectedOptionVaration,
         sopQ:state.selectReducer.selectedOptionQuantity,
-        glavenObj:state.selectReducer.obj
+        glavenObj:state.selectReducer.obj,
+        productItems:state.productReducer.productItems
     }
 };
 const mapDispatchToProps = dispatch=>{
     return{
-        onMountFirstOptions:(productItems)=>dispatch(actions.addVariations(productItems)),
-        onSelectedVariant:(selectedItem)=>dispatch(actions.selectedVariant(selectedItem))
+        onSelectedVariant:(selectedItem)=>dispatch(actions.selectedVariant(selectedItem)),
+        setProductPrice:(productPrice)=>dispatch(actions.setProductPrice(productPrice))
     }
 };
 

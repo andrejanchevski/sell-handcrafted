@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes'
-
+import axios from '../../custom-axios/axios'
 export const openRegisterModal=()=>{
     return{
         type:actionTypes.OPEN_REGISTER_MODAL
@@ -43,7 +43,22 @@ export const addUserPassword=(password)=>{
 
 export const confrimPassword=(cPassword)=>{
     return{
-        type:actionTypes.ADD_USER_PASSWORD,
+        type:actionTypes.CONFIRM_PASSWORD,
         cPassword:cPassword
     };
 };
+
+export const createUser=(user)=>{
+    return dispatch=>{
+        axios.post("/api/users/createUser",user,{
+            headers:{
+                'Content-Type':"application/json"
+            }
+        }).then(resp=>{
+           dispatch(closeRegisterModal())
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+};
+

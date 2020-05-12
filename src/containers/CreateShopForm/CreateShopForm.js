@@ -7,13 +7,6 @@ import Select from 'react-select'
 import {connect} from "react-redux";
 import * as actions from "../../store/actions/generalActions";
 import Button from "../../UI/Button/Button";
-const options=[
-    {value:"Clothing&Shoes",label:"Clothing&Shoes"},
-    {value:"Accesories",label:"Accesories"},
-    {value:"Jewellery",label:"Jewellery"},
-    {value:"Home",label:"Home"},
-
-];
 class CreateShopForm extends Component{
 
 
@@ -21,6 +14,10 @@ class CreateShopForm extends Component{
         addedProfilePicture:false,
         addedCoverPhoto:false,
     };
+
+
+
+
     inputNameHandler=(event)=>{
         this.props.onShopNameTyping(event.target.value);
     };
@@ -55,14 +52,30 @@ class CreateShopForm extends Component{
 
     formSubmitHandler=(event)=>{
         event.preventDefault();
-        console.log("Done")
-
+        let shop={
+            ...this.props.shop,
+            shopCategory:this.props.shop.shopCategory.value
+        };
+        delete shop.shopProfilePicture;
+        delete shop.shopCoverPhoto;
+        this.props.createShop(shop)
     };
+
     render() {
         let niza=[styles.Block1,"mt-5"];
         let text1;
         let text2;
         let disabled=true;
+        let options=[];
+        if(this.props.categories.length!==0){
+            options=this.props.categories.map(el=>{
+                return {
+                    value:el.categoryId,
+                    label:el.categoryName
+                }
+            })
+        }
+
         if(this.state.addedProfilePicture){
             text1=<div className="text-center">Profile Picture Added<FontAwesomeIcon icon={faCheck}/></div>
         }else
@@ -196,12 +209,14 @@ class CreateShopForm extends Component{
 const mapStateToProps=state=>{
     return{
         shopName:state.createShopReducer.shopName,
-        shopDesc:state.createShopReducer.shortDesc,
-        shopCategory:state.createShopReducer.mainCategory,
+        shopDesc:state.createShopReducer.shopDescription,
+        shopCategory:state.createShopReducer.shopCategory,
         shopUTN:state.createShopReducer.shopUTN,
-        shopBA:state.createShopReducer.shopBankAccountNumber,
+        shopBA:state.createShopReducer.shopBankAccount,
         shopProfilePicture: state.createShopReducer.shopProfilePicture,
-        shopCoverPhoto: state.createShopReducer.shopCoverPhoto
+        shopCoverPhoto: state.createShopReducer.shopCoverPhoto,
+        shop:state.createShopReducer,
+        categories:state.categoryReducer.categories
     }
 };
 
@@ -213,7 +228,8 @@ const mapDispatchToProps = dispatch =>{
         onUTNTyping:(shopUTN)=>dispatch(actions.addShopUTN(shopUTN)),
         onBATyping:(shopBA)=>dispatch(actions.addShopBA(shopBA)),
         onProfilePictureAdd:(profilePicture)=>dispatch(actions.addShopProfilePicture(profilePicture)),
-        onCoverPhotoAdd:(coverPhoto)=>dispatch(actions.addShopCoverPhoto(coverPhoto))
+        onCoverPhotoAdd:(coverPhoto)=>dispatch(actions.addShopCoverPhoto(coverPhoto)),
+        createShop:(shop)=>dispatch(actions.createShop(shop))
 
     }
 };

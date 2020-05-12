@@ -1,6 +1,8 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initalState={
+    userId:'2f4d8412-17a4-4290-aa6f-92034f5d8488',
+    shopId:'e28e4a55-78dc-4c8e-acd5-4594038d4fd0',
     productName:"",
     productDescription:"",
     productPhotos:[],
@@ -8,7 +10,8 @@ const initalState={
     materials:[],
     productSKU:"",
     productItemCreationDTOS:[],
-    chosenAttributes:[]
+    chosenAttributes:[],
+    startingAttributes:[]
 };
 
 
@@ -95,10 +98,13 @@ const reducer = (state=initalState,action)=>{
                 ...state,
                 productItemCreationDTOS: state.productItemCreationDTOS.filter((value,index)=>index!==action.productItemIndex)
             };
+        case actionTypes.INITIALIZE_ATTRIBUTES:
+            return{
+                ...state,
+                startingAttributes: action.startingAttributes
+            };
         default:
             return state;
-
-
     }
 
 

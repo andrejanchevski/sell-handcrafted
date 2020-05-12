@@ -3,6 +3,7 @@ import { Collapse, CardBody, Card } from 'reactstrap';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import AuthContext from "../../context/auth-context";
+import {connect} from 'react-redux'
 
 const TextToogle =(props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +13,7 @@ const TextToogle =(props) => {
     const authContext=useContext(AuthContext);
     let content=null;
     if(props.title==="Description"){
-        content=authContext.longDescription
-
+        content=props.productDescription;
     }else if(props.title==="Materials")
     {
         content=authContext.materials
@@ -40,5 +40,9 @@ const TextToogle =(props) => {
         </div>
     );
 };
-
-export default TextToogle;
+const mapStateToProps=(state)=>{
+    return {
+        productDescription:state.productReducer.productDescription
+    }
+};
+export default connect(mapStateToProps)(TextToogle);
