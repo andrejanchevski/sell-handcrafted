@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes'
 import axios from '../../custom-axios/axios'
-import {closeRegisterModal} from "./registerModalActions";
+//import {closeRegisterModal} from "./registerModalActions";
 
 export const addShopName=(shopName)=>{
     return{
@@ -45,6 +45,18 @@ export const addShopProfilePicture=(profilePicture)=>{
     }
 };
 
+export const sentShopPhotos=(shopImages,shopId)=>{
+    return dispatch=>{
+        axios.post('api/Images/shop?userId=dfd0c971-048f-43b2-ba2d-e34834280a50',
+            shopImages,{
+                headers: {'shopId' :shopId}
+            })
+            .then(res => {
+                console.log(res)
+            });
+    }
+};
+
 export const addShopCoverPhoto=(coverPhoto)=>{
     return{
         type:actionTypes.SHOP_PROFILE_PICTURE_ADDED,
@@ -52,17 +64,18 @@ export const addShopCoverPhoto=(coverPhoto)=>{
     }
 };
 
-export const createShop=(shop)=>{
+export const createShop=(shop,formData)=>{
     return dispatch=>{
+        console.log(shop);
         axios.post("/api/shops/create",shop,{
             headers:{
                 'Content-Type':"application/json",
-                'userId':'2f4d8412-17a4-4290-aa6f-92034f5d8488'
+                'userId':'dfd0c971-048f-43b2-ba2d-e34834280a50'
             }
         }).then(resp=>{
-            console.log(resp)
+            dispatch(sentShopPhotos(formData,resp.data))
         }).catch(err=>{
             console.log(err)
         })
     }
-}
+};

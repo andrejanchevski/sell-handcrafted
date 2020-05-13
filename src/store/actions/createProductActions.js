@@ -115,7 +115,7 @@ export const deleteProductVariaton=(productItemIndex)=>{
 
 export const sentPhotos=(productImages,productId)=>{
     return dispatch=>{
-        axios.post('api/productsImages?productId='+productId,
+        axios.post('api/Images/product?productId='+productId,
             productImages,{
                 headers: {'shopName' :"Andrej's Home Shop"}
             })

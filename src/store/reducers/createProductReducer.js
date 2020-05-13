@@ -1,8 +1,8 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initalState={
-    userId:'2f4d8412-17a4-4290-aa6f-92034f5d8488',
-    shopId:'e28e4a55-78dc-4c8e-acd5-4594038d4fd0',
+    userId:'dfd0c971-048f-43b2-ba2d-e34834280a50',
+    shopId:'01eb5db0-95ad-45d1-8ba9-bd8c06fd79ef',
     productName:"",
     productDescription:"",
     productPhotos:[],

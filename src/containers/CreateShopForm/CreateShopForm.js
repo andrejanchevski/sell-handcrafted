@@ -9,14 +9,10 @@ import * as actions from "../../store/actions/generalActions";
 import Button from "../../UI/Button/Button";
 class CreateShopForm extends Component{
 
-
     state={
         addedProfilePicture:false,
         addedCoverPhoto:false,
     };
-
-
-
 
     inputNameHandler=(event)=>{
         this.props.onShopNameTyping(event.target.value);
@@ -48,17 +44,18 @@ class CreateShopForm extends Component{
         this.props.onBATyping(event.target.value);
     };
 
-
-
     formSubmitHandler=(event)=>{
         event.preventDefault();
+        let profilePicture=this.props.shopProfilePicture;
+        let formData= new FormData();
+        formData.append('shopLogoImage',profilePicture);
         let shop={
             ...this.props.shop,
             shopCategory:this.props.shop.shopCategory.value
         };
         delete shop.shopProfilePicture;
         delete shop.shopCoverPhoto;
-        this.props.createShop(shop)
+        this.props.createShop(shop,formData)
     };
 
     render() {
@@ -90,9 +87,7 @@ class CreateShopForm extends Component{
         }
 
 
-
         disabled = this.props.shopName.trim() !== "" && this.props.shopCategory!==undefined && this.state.addedProfilePicture;
-
 
         return (
             <div className={styles.Background}>
@@ -229,7 +224,7 @@ const mapDispatchToProps = dispatch =>{
         onBATyping:(shopBA)=>dispatch(actions.addShopBA(shopBA)),
         onProfilePictureAdd:(profilePicture)=>dispatch(actions.addShopProfilePicture(profilePicture)),
         onCoverPhotoAdd:(coverPhoto)=>dispatch(actions.addShopCoverPhoto(coverPhoto)),
-        createShop:(shop)=>dispatch(actions.createShop(shop))
+        createShop:(shop,formData)=>dispatch(actions.createShop(shop,formData))
 
     }
 };

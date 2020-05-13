@@ -55,6 +55,7 @@ export const createUser=(user)=>{
                 'Content-Type':"application/json"
             }
         }).then(resp=>{
+            console.log(resp.data);
            dispatch(closeRegisterModal())
         }).catch(err=>{
             console.log(err)

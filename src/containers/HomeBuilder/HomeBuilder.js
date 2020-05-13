@@ -4,7 +4,7 @@ import Carousel from '../../UI/Carousel/Carousel'
 import CategoryColumns from "../../components/CategoryColumns/CategoryColumns";
 import Description from "../../components/Description/Description";
 import ProductShopSD from "../../components/ProductsShopSD/ProductsShopSD";
-
+import axios from '../../custom-axios/axios'
 
 class HomeBuilder extends Component{
     state={
@@ -12,6 +12,11 @@ class HomeBuilder extends Component{
     };
 
     componentDidMount() {
+        axios.get("api/products/all").then((resp)=>{
+            console.log(resp)
+        }).catch(err=>{
+            console.log(err)
+        })
 
     }
 
