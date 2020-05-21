@@ -1,8 +1,8 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initalState={
-    userId:'dfd0c971-048f-43b2-ba2d-e34834280a50',
-    shopId:'01eb5db0-95ad-45d1-8ba9-bd8c06fd79ef',
+    userId:'f8cb6375-e443-43a1-a526-e5796fc186c5',
+    shopId:'',
     productName:"",
     productDescription:"",
     productPhotos:[],
@@ -103,6 +103,12 @@ const reducer = (state=initalState,action)=>{
                 ...state,
                 startingAttributes: action.startingAttributes
             };
+        case actionTypes.SET_SHOP_ID_FOR_CREATE:
+            return{
+                ...state,
+                shopId: action.shopId
+            }
+
         default:
             return state;
     }

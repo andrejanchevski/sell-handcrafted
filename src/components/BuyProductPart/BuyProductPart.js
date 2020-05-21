@@ -10,7 +10,7 @@ const BuyProductPart=(props)=>{
     return(
         <div className={["col-6",styles.Content].join(" ")}>
                 <div className="row mt-2">
-                    <div className="col-8">
+                    <div className="col-7 ">
                         <a href="/" className={["mr-2",styles.ShopLink].join(" ")}>{props.shopTitle}</a>
                     </div>
                     <div className="col">
@@ -19,7 +19,7 @@ const BuyProductPart=(props)=>{
                 </div>
                 <hr/>
                     <h3 className="mt-2">{props.productName}</h3>
-                    <h3 className="mt-3">${props.productPrice}</h3>
+                    <h3 className="mt-3">${props.priceForShow}</h3>
                     {/*<p className={styles.ShortDescription}>{props.shortDesc}</p>*/}
                     <SelectPart/>
                     <TextToogle title="Description"/>
@@ -58,7 +58,8 @@ const BuyProductPart=(props)=>{
 const mapStateToProps=(state)=>{
     return {
         productName:state.productReducer.productName,
-        productPrice:state.productReducer.price
+        productPrice:state.productReducer.price,
+        priceForShow: state.productReducer.priceForShow
     }
 };
 

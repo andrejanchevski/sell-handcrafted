@@ -11,6 +11,12 @@ export const setProduct=(product)=>{
     }
 };
 
+export const setProductPriceForShow=(productPriceForShow)=>{
+    return {
+        type:actionTypes.SET_UP_PRODUCT_PRICE_FOR_SHOW,
+        productPriceForShow:productPriceForShow
+    }
+}
 export const setProductPrice=(productPrice)=>{
     return{
         type:actionTypes.SET_UP_PRODUCT_PRICE,
@@ -23,7 +29,7 @@ export const getProductById=(productId)=>{
         axios.get("/api/products/"+productId).then((resp)=>{
             dispatch(setProduct(resp.data));
             dispatch(actions.addVariations(resp.data.productItems));
-            console.log(resp)
+            //console.log(resp)
         }).catch((err)=>{
 
         })

@@ -20,6 +20,8 @@ import createProductReducer from "./store/reducers/createProductReducer"
 import tableAttributeReducer from './store/reducers/tableAttributeReducer'
 import categoryReducer from './store/reducers/categoryReducer'
 import productReducer from './store/reducers/productReducer'
+import shopReducer from './store/reducers/shopReducer'
+import allShopsReducer from './store/reducers/allShopsReducer'
 
 
 const rootReducer=combineReducers({
@@ -29,7 +31,9 @@ const rootReducer=combineReducers({
     createProductReducer:createProductReducer,
     tableAttributeReducer:tableAttributeReducer,
     categoryReducer:categoryReducer,
-    productReducer:productReducer
+    productReducer:productReducer,
+    shopReducer:shopReducer,
+    allShopsReducer:allShopsReducer
 });
 
 

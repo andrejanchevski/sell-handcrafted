@@ -12,12 +12,11 @@ class HomeBuilder extends Component{
     };
 
     componentDidMount() {
-        axios.get("api/products/all").then((resp)=>{
-            console.log(resp)
-        }).catch(err=>{
-            console.log(err)
-        })
-
+        // axios.get("api/products/all").then((resp)=>{
+        //     console.log(resp)
+        // }).catch(err=>{
+        //     console.log(err)
+        // })
     }
 
     render() {

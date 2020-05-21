@@ -113,14 +113,16 @@ export const deleteProductVariaton=(productItemIndex)=>{
     }
 };
 
-export const sentPhotos=(productImages,productId)=>{
+export const sentPhotos=(productImages,productId,history,forShopName)=>{
     return dispatch=>{
         axios.post('api/Images/product?productId='+productId,
             productImages,{
-                headers: {'shopName' :"Andrej's Home Shop"}
+                headers: {'shopName' :forShopName}
             })
             .then(res => {
-                console.log(res)
+                //console.log(res)
+                history.push("/product/"+productId)
+
             });
     }
 };
@@ -142,18 +144,26 @@ export const getStartingAttributes=()=>{
     }
 };
 
-export const sentProduct=(product,formData)=>{
+export const sentProduct=(product,formData,history,forShopName)=>{
     return dispatch=>{
         axios.post("/api/products/create", product, {
             headers: {
                 'Content-Type': "application/json"
             }
         }).then((resp) => {
-            dispatch(sentPhotos(formData,resp.data))
+            dispatch(sentPhotos(formData,resp.data,history,forShopName))
         });
     }
 
 };
+
+export const setForWhichShopId=(shopId)=>{
+    return{
+        type:actionTypes.SET_SHOP_ID_FOR_CREATE,
+        shopId:shopId
+    }
+}
+
 
 
 

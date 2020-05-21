@@ -6,7 +6,7 @@ const listGroup =(props)=>{
 
 
     let items=props.items.map((el,index)=>{
-        return <ListGroup.Item key={index}>{el}</ListGroup.Item>
+        return <ListGroup.Item key={index}>{el.categoryName}</ListGroup.Item>
     });
     return(
         <ListGroup className="mt-3">

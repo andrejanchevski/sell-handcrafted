@@ -8,36 +8,16 @@ import BuyProductPart from "../../components/BuyProductPart/BuyProductPart";
 import AuthContext from "../../context/auth-context";
 import ReviewProductBuilder from "../ReviewProductBuilder/ReviewProductBuilder";
 import {connect} from 'react-redux'
+import {withRouter} from "react-router-dom";
 import * as actions from '../../store/actions/generalActions'
 
 class ProductBuilder extends Component{
 
     componentDidMount() {
-        this.props.getProductById('e1db3791-e4e5-4805-ab5c-3cacb7588eda');
-        console.log("OOPPPPPA")
+        this.props.getProductById(this.props.match.url.split("/")[2]);
     }
     state={
         materials:["silk","cotton"],
-        productItems:[
-            {
-                productItemID:232323e23,
-                price:22,
-                attributes:[
-                    {type:"size",value:"M"},
-                    {type:"color",value:"red"},
-                ],
-                quantity:15
-            },
-            {
-                productItemID: 232323233232,
-                price:23,
-                attributes: [
-                    {type:"size",value:"M"},
-                    {type:"color",value:"black"}
-                ],
-                quantity: 20
-            }
-        ],
        shop:{
             shopID:223232323,
             shopName:"CustomVintageShop",
@@ -58,13 +38,11 @@ class ProductBuilder extends Component{
                 {/*<Breadcrumb/>*/}
                 <div className={classes.Background}>
                     <div className="row">
-                        <ImageProductPart productRating={this.state.productRating} productRatings={this.state.productRatings}/>
+                        <ImageProductPart/>
                         <AuthContext.Provider value={{materials: this.state.materials,longDescription: this.state.longDesc,productItems: this.state.productItems}}>
                             <BuyProductPart
-                                title={this.state.name}
                                 shopRating={this.state.shop.shopRating}
                                 shopRatings={this.state.shop.shopReviews}
-                                price={this.state.generalPrice}
                                 shortDesc={this.state.shortDesc}
                                 shopTitle={this.state.shop.shopName}
                             />
@@ -91,4 +69,4 @@ const mapDispatchToProps=(dispatch)=>{
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProductBuilder);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(ProductBuilder));

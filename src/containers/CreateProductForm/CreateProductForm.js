@@ -10,15 +10,10 @@ import {withRouter} from "react-router-dom";
 
 
 class CreateProductForm extends Component{
-
-
     componentDidMount() {
         this.props.getStartingAttributes();
     }
-
-
     render() {
-
         let niza=[styles.Background,"mt-4"];
         let disabled=true;
         if(this.props.productItemCreationDTOS.length!==0){
@@ -28,7 +23,7 @@ class CreateProductForm extends Component{
             event.preventDefault();
             let formData= new FormData();
             this.props.product.productPhotos.forEach((photo)=>{
-                console.log(photo);
+                //console.log(photo);
                 formData.append('productImages',photo)
             });
             let wholeProduct={
@@ -37,9 +32,8 @@ class CreateProductForm extends Component{
             delete wholeProduct.chosenAttributes;
             delete wholeProduct.productPhotos;
             delete wholeProduct.startingAttributes;
-            this.props.sentProduct(wholeProduct,formData);
-            this.props.history.push("/")
-
+            let forShopName=this.props.location.search.split("=")[1];
+            this.props.sentProduct(wholeProduct,formData,this.props.history,forShopName);
         };
         return (
             <div className={niza.join(" ")}>
@@ -65,7 +59,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return{
-        sentProduct:(productToSend,formData)=>dispatch(actions.sentProduct(productToSend,formData)),
+        sentProduct:(productToSend,formData,history,forShopName)=>dispatch(actions.sentProduct(productToSend,formData,history,forShopName)),
         getStartingAttributes:()=>dispatch(actions.getStartingAttributes())
 
     }

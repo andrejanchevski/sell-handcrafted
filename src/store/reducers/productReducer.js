@@ -7,7 +7,8 @@ const initalState={
     price:0,
     productReviews: [],
     productDescription:"",
-    productItems:[]
+    productItems:[],
+    priceForShow:0
 
 };
 
@@ -24,12 +25,18 @@ const reducer=(state=initalState,action)=>{
                 productItems:action.product.productItems,
                 price:action.product.price,
                 productDescription: action.product.productDescription,
+                priceForShow: action.product.price
             };
         case actionTypes.SET_UP_PRODUCT_PRICE:
             return{
                 ...state,
                 price:action.productPrice
             };
+        case actionTypes.SET_UP_PRODUCT_PRICE_FOR_SHOW:
+            return {
+                ...state,
+                priceForShow: action.productPriceForShow
+            }
         default:
             return state
 

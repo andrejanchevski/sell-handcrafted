@@ -10,14 +10,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function BasicPagination() {
-    const onPageChange=(event,page)=>{
-        console.log(event.target);
-    };
+export default function BasicPagination(props) {
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Pagination count={10}  onClick={(event)=>onPageChange(event)}/>
+            <Pagination page={props.page} count={props.pages} onClick={props.clicked}/>
         </div>
     );
 }

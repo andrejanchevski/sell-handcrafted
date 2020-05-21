@@ -4,7 +4,6 @@ import NavRight from "./NavRight/NavRight";
 import NavMiddle from "./NavMiddle/NavMiddle";
 import classes from './Toolbar.module.css'
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
 
 class Toolbar extends Component{
 

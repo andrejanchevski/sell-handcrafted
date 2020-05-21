@@ -7,6 +7,8 @@ import Select from 'react-select'
 import {connect} from "react-redux";
 import * as actions from "../../store/actions/generalActions";
 import Button from "../../UI/Button/Button";
+import {withRouter} from "react-router-dom";
+
 class CreateShopForm extends Component{
 
     state={
@@ -55,7 +57,7 @@ class CreateShopForm extends Component{
         };
         delete shop.shopProfilePicture;
         delete shop.shopCoverPhoto;
-        this.props.createShop(shop,formData)
+        this.props.createShop(shop,formData,this.props.history)
     };
 
     render() {
@@ -168,27 +170,27 @@ class CreateShopForm extends Component{
                         <p>Billing Information</p>
                         <div className="form-group row">
                             <div className="col">
-                                <label htmlFor="exampleInputName" className="mr-3 float-right">Shop BankAccountNumber</label>
+                                <label htmlFor="exampleInputBAN" className="mr-3 float-right">Shop BankAccountNumber</label>
                             </div>
                             <div className="col">
                                 <input  type="text"
                                         className="form-control w-50 "
-                                        id="exampleInputName"
+                                        id="exampleInputBAN"
                                         onChange={this.inputBAHandler}
-                                        aria-describedby="nameHelp"/>
+                                        aria-describedby="BANHelp"/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <div className="col">
-                                <label htmlFor="exampleInputDescription" className="mr-3 float-right">Shop UTN</label>
+                                <label htmlFor="exampleInputUTN" className="mr-3 float-right">Shop UTN</label>
                             </div>
                             <div className="col">
                                 <input
                                     type="text"
                                     onChange={this.inputUTNHandler}
                                     className="form-control w-50"
-                                    id="exampleInputDescription"
-                                    aria-describedby="descriptionHelp"/>
+                                    id="exampleInputUTN"
+                                    aria-describedby="UTNHelp"/>
                             </div>
                         </div>
                     </div>
@@ -224,10 +226,10 @@ const mapDispatchToProps = dispatch =>{
         onBATyping:(shopBA)=>dispatch(actions.addShopBA(shopBA)),
         onProfilePictureAdd:(profilePicture)=>dispatch(actions.addShopProfilePicture(profilePicture)),
         onCoverPhotoAdd:(coverPhoto)=>dispatch(actions.addShopCoverPhoto(coverPhoto)),
-        createShop:(shop,formData)=>dispatch(actions.createShop(shop,formData))
+        createShop:(shop,formData,history)=>dispatch(actions.createShop(shop,formData,history))
 
     }
 };
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(CreateShopForm);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(CreateShopForm));

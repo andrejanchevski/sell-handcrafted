@@ -8,17 +8,18 @@ const ImageProductPart=(props)=>{
     if(props.photos.length!==0){
         //console.log(props.photos);
     }
-    const smallPictures=props.photos.slice(1,props.photos.length).map((el,index)=>{
-        return <img src={el} key={index} className="mt-2 img-fluid" style={{width:"80px",height:"80px"}} alt="small"/>
+    const smallPictures=props.photos.map((el,index)=>{
+        return <img src={el} key={index} className="mt-2 img-fluid" style={{width:"100%",height:"80px"}} alt="small"/>
     });
+
     return (
         <div className="col-6">
             <div className="row">
-                <div className="col-auto d-flex flex-column">
+                <div className="col-2 d-flex flex-column">
                     {smallPictures}
                 </div>
-                <div className="col-auto">
-                    <img src={props.photos[0]}  style={{height:"650px",width:"420px"}} className="mt-2 img-fluid" alt="primaryPhoto"/>
+                <div className="col-10">
+                    <img src={props.photos[0]}  style={{height:"550px",width:"100%"}} className="mt-2 img-fluid" alt="primaryPhoto"/>
                 </div>
             </div>
             <div className="row mt-4">

@@ -44,7 +44,8 @@ export {
     addProductVariaton,
     deleteProductVariaton,
     sentProduct,
-    getStartingAttributes
+    getStartingAttributes,
+    setForWhichShopId
 } from './createProductActions'
 
 export {
@@ -69,7 +70,16 @@ export {
 
 export {
     getProductById,
-    setProductPrice
-
+    setProductPrice,
+    setProductPriceForShow
 } from './productActions'
 
+export{
+    getShopById,
+    getShopProductsByPage
+} from './shopActions'
+
+export {
+    getAllShops,
+    getShopsFromFilters
+} from './allShopsActions'
